@@ -1,0 +1,45 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<br>
+
+<h2>Eingabe der Warenbewegungen (Zugang/Abgang)</h2>
+
+<form (ngSubmit)='saveEntry()' [formGroup]="receiptForm">
+
+  <div class="form-group row">
+    <div class="input-group">
+      <label class="col-4 col-form-label" for="datepickerRe">Datum</label>
+      <input #d="ngbDatepicker" [(ngModel)]="model"
+             class="form-control" formControlName="datepickerRe" id="datepickerRe" name="datepickerRe" ngbDatepicker placeholder="yyyy-mm-dd">
+      <div class="input-group-append">
+        <button (click)="d.toggle()" class="btn btn-outline-secondary calendar" type="button"><i
+          class="fa fa-calendar"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label" for="goodsRe">Ware</label>
+    <div class="col-8">
+      <mat-select  [(ngModel)]="selectedName" class="form-control" formControlName="goodsRe" id="goodsRe" name="goodsRe">
+      <mat-option *ngFor="let goods of goodsList" [value]="goods.goodsId" >
+        {{goods.goodsName}}, {{goods.unitName}}, {{goods.goodsPrice}} €, {{goods.goodsNote}}
+      </mat-option>
+      </mat-select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label" for="goodsPiecesRe">Anzahl der Waren</label>
+    <div class="col-8">
+      <input class="form-control" formControlName="goodsPiecesRe" id="goodsPiecesRe" name="goodsPiecesRe" placeholder="Anzahl der Waren" type="number">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button class="btn btn-primary" name="submit" type="submit">Speichern</button>
+    </div>
+  </div>
+</form>

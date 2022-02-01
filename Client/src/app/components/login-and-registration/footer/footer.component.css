@@ -1,0 +1,7 @@
+hr {
+  border: 2px solid var(--colorGray);
+}
+
+p {
+  color: var(--colorGray);
+}

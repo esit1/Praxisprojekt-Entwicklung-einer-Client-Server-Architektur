@@ -1,0 +1,101 @@
+<br>
+<h2>Übersicht Tagesabrechnung</h2>
+<br>
+
+
+<form [formGroup]="OverviewEndForm" (mouseup)="OverviewEnd()">
+  <div class="form-group row">
+    <div class="input-group">
+      <label class="col-4 col-form-label" for="datepickerEnOv">Datum</label>
+      <input #d="ngbDatepicker" [(ngModel)]="model"
+             class="form-control" formControlName="datepickerEnOv" id="datepickerEnOv" name="datepickerEnOv" ngbDatepicker placeholder="{{todayDateString}}" value="{{todayDateString}}">
+      <div class="input-group-append" >
+        <button (click)="d.toggle()" class="btn btn-outline-secondary calendar" type="button" ><i
+          class="fa fa-calendar"></i></button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-3" *ngFor="let entry of overviewEndList">
+    <div *ngIf="selectDate == entry.graduationDate">
+      <table class="table table-bordered" >
+        <thead >
+        <tr>
+          <th>{{entry.goodsName}}</th>
+          <th>Menge</th>
+          <th>Gesamt/Verkauft</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{entry.goodsUnit}}, {{entry.goodsPrice}} €</td>
+          <td>{{entry.graduationSold}}</td>
+          <td>{{entry.graduationRevenue}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</form>
+
+
+
+
+<h3>Vorschau Pdf</h3>
+<div >
+  <div class="col-md-8" id="htmlConvert">
+
+    <div class = "headline">Datum:</div>
+    <div class = "headline">Name:</div>
+    <div class = "headline">Kleingeld Beleg/Zählprotokoll</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr class = "hrBold">
+    <div class = "money">Geldnoten</div>
+    <div class = "money">Menge</div>
+    <div class = "money"></div>
+    <div>.</div>
+
+    <div>5,00 €</div>
+    <hr>
+    <div>10,00 €</div>
+    <hr>
+    <div>20,00 €</div>
+    <hr>
+    <div>50,00 €</div>
+    <hr class = "hrBold">
+
+
+    <div class="container mt-3" *ngFor="let entry of overviewEndList">
+      <div *ngIf="selectDate == entry.graduationDate">
+        <table class="table table-bordered" >
+          <thead >
+          <tr>
+            <th>{{entry.goodsName}}</th>
+            <th>Menge</th>
+            <th>Gesamt/Verkauft</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{entry.goodsUnit}}, {{entry.goodsPrice}} €</td>
+            <td>{{entry.graduationSold}}</td>
+            <td>{{entry.graduationRevenue}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 text-right">
+  <button class="btn btn-primary" (click)="openPDF()">PDF erstellen</button>
+</div>

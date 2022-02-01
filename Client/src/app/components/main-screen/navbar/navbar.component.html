@@ -1,0 +1,61 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="navbar">
+
+  <button class="btn btn-default button-navbar" mat-button><i class="fa fa-th"></i> <a routerLink="/"> M </a></button>
+
+
+  <button [matMenuTriggerFor]="receiptMenu " class="btn btn-default button-navbar" mat-button><i
+    class="fa fa-share-square-o"></i>
+    Warenbewegung <i class="fa fa-sort-down"></i></button>
+  <mat-menu #receiptMenu="matMenu">
+    <button mat-menu-item><a routerLink="/receipt/new">Eingabe</a></button>
+    <button mat-menu-item><a routerLink="/receipt/overview">Übersicht</a></button>
+  </mat-menu>
+
+  <button [matMenuTriggerFor]="endMenu " class="btn btn-default  button-navbar" mat-button><i
+    class="fa fa-calculator"></i>
+    Tagesabschluss <i class="fa fa-sort-down"></i></button>
+  <mat-menu #endMenu="matMenu">
+    <button mat-menu-item><a routerLink="/end/new">Erstellen</a></button>
+    <button mat-menu-item><a routerLink="/end/create">Pdf erstellen</a></button>
+    <button mat-menu-item><a routerLink="/end/overview">Übersicht</a></button>
+  </mat-menu>
+
+  <button [matMenuTriggerFor]="statisticMenu " class="btn btn-default  button-navbar" mat-button><i
+    class="fa fa-area-chart"></i>
+    Statistik <i class="fa fa-sort-down"></i></button>
+  <mat-menu #statisticMenu="matMenu">
+    <button mat-menu-item><a routerLink="/statistics/month">Monatsstatistik</a></button>
+    <button mat-menu-item><a routerLink="/statistics/year">Jahresstatistik</a></button>
+  </mat-menu>
+
+  <button [matMenuTriggerFor]="goodsMenu" class="btn btn-default button-navbar" mat-button><i class="fa fa-codepen"></i>
+    Waren<i
+      class="fa fa-sort-down"></i></button>
+  <mat-menu #goodsMenu="matMenu">
+    <button mat-menu-item><a routerLink="/goods/new">Ware anlegen</a></button>
+    <button mat-menu-item><a routerLink="/goods/change">Ware ändern/löschen</a></button>
+    <button mat-menu-item><a routerLink="/goods/settings">Warenoption</a></button>
+    <button mat-menu-item><a routerLink="/goods/overview">Übersicht</a></button>
+  </mat-menu>
+
+  <button [matMenuTriggerFor]="userMenu " class="btn btn-default button-navbar" mat-button><i
+    class="fa fa-id-card-o"></i> <a routerLink="/user/change">Benutzer</a> </button>
+  <mat-menu #userMenu="matMenu">
+  </mat-menu>
+
+  <button [matMenuTriggerFor]="selfServiceMenu " class="btn btn-default button-navbar" mat-button><i
+    class="fa fa-shopping-basket"></i> Selbstbedienungsstand <i class="fa fa-sort-down"></i></button>
+  <mat-menu #selfServiceMenu="matMenu">
+    <button mat-menu-item><a routerLink="/self/change">Selbstbedienungsstand ändern</a></button>
+    <button mat-menu-item><a routerLink="/self/add">Benutzer hinzufügen</a></button>
+    <button mat-menu-item><a routerLink="/self/overview">Benutzerübersicht</a></button>
+  </mat-menu>
+
+  <button class="btn btn-default button-navbar" (click)="logout()" mat-button><i class="fa fa-sign-out"></i> Abmelden </button>
+</div>
+
+
+

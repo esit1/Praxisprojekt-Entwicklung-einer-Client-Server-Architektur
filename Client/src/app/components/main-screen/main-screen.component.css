@@ -1,0 +1,49 @@
+.container {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 8fr 2fr 0.5fr;
+  grid-template-rows: 0.4fr 3.4fr 0.4fr 0.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "navbar navbar navbar navbar navbar"
+    "main main main main main"
+    "selectSelf selectSelf selectSelf selectSelf selectSelf"
+    "footer footer footer footer footer";
+}
+
+.navbar {
+  grid-area: navbar;
+  background: var(--colorGray);
+}
+
+.main {
+  grid-area: main;
+  background: white;
+}
+
+.footer {
+  grid-area: footer;
+  background: var(--colorGray);
+}
+
+.selectSelf {
+  grid-area: selectSelf;
+  background: white;
+}
+
+.logout {
+  grid-area: logout;
+  background: white;
+}
+
+
+html,
+body {
+  height: 100%;
+  background: radial-gradient(var(--colorBackground2), var(--colorBackground1));
+  overflow: hidden;
+}
+
+.container-main-screen {
+  background: white;
+}

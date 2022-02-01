@@ -1,0 +1,605 @@
+\subsection *{Quellcode Server (Ausschnitt)}\label{QuellcodeServer}
+
+
+\lstset{language=java}
+\begin{lstlisting}[frame=tb, caption={Das Listing zeigt die Klasse EndOfTheDay im Paket model}, label={lst:EndOfTheDay}]
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+/**
+* Class represents the table "tb_end of_the_day".
+*/
+@Table(name = "tb_end of_the_day", indexes = {
+	@Index(name = "cl_user_nr", columnList = "cl_user_nr"),
+	@Index(name = "cl_goods_nr", columnList = "cl_goods_nr"),
+	@Index(name = "cl_self_service_stand_nr", 
+	columnList = "cl_self_service_stand_nr")
+})
+@Setter
+@Getter
+@Entity
+public class EndOfTheDay {
+	
+	/**
+	* ID End of the Day.
+	*/
+	@EmbeddedId
+	private EndOfTheDayId id;
+	
+	/**
+	* Refers to a user ID.
+	*/
+	@ManyToOne
+	@JoinColumn(name = "cl_user_nr")
+	private User userNr;
+	
+	/**
+	* Refers to a self-Service-Stand name.
+	*/
+	@ManyToOne
+	@JoinColumn(name = "cl_self_service_stand_nr")
+	private SelfServiceStand selfServiceStandName;
+	
+	/**
+	* The number of goods counted.
+	*/
+	@Column(name = "cl_graduation_count")
+	private Integer graduationCount;
+	
+	/**
+	* The number of computationally determined goods sold.
+	*/
+	@Column(name = "cl_graduation_sold")
+	private Integer graduationSold;
+	
+	/**
+	* The number of mathematically determined income in euros.
+	*/
+	@Column(name = "cl_graduation_revenue")
+	private Double graduationRevenue;
+}
+\end{lstlisting}
+
+%##############################################################################################
+
+\lstset{language=java}
+\begin{lstlisting}[frame=tb, caption={Das Listing zeigt die Klasse EndOfTheDayId im Paket model}, label={lst:EndOfTheDayId}]
+/**
+* Class represents the table ID "tb_end of_the_day".
+*/
+@Getter
+@Setter
+@Embeddable
+public class EndOfTheDayId implements Serializable {
+	
+	/**
+	* serialVersionUID
+	*/
+	private static final long serialVersionUID = 4548732131340178144L;
+	
+	/**
+	* End of the day date.
+	*/
+	@Column(name = "cl_graduation_date", nullable = false)
+	private LocalDate graduationDate;
+	
+	/**
+	* The commodity number.
+	*/
+	@Column(name = "cl_goods_nr", nullable = false)
+	private Integer goodsNr;
+	
+	/**
+	* Overwritten hash code method.
+	*
+	* @return Objects
+	*/
+	@Override
+	public int hashCode() {
+		return Objects.hash(goodsNr, graduationDate);
+	}
+	
+	/**
+	* Overwritten equals method.
+	*
+	* @param o goodsNr and graduationDate
+	* @return Objects
+	*/
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+		EndOfTheDayId entity = (EndOfTheDayId) o;
+		return Objects.equals(this.goodsNr, entity.goodsNr) &&
+		Objects.equals(this.graduationDate, entity.graduationDate);
+	}
+}
+\end{lstlisting}
+
+%##############################################################################################
+
+\lstset{language=java}
+\begin{lstlisting}[frame=tb, caption={Das Listing zeigt das Interface ReceiptGoodRepository im Paket repository}, label={lst:ReceiptGoodRepository}]
+/**
+* This class contains the database queries of the table tb_receipt_goods.
+*/
+@Repository
+public interface ReceiptGoodRepository extends JpaRepository<ReceiptGoods, Integer> {
+	
+	/**
+	* Query, finds a record with the incoming ID.
+	* @param receiptGoodId The receipt goods Id.
+	* @return record receiptGoods
+	*/
+	ReceiptGoods findByReceiptGoodId(Integer receiptGoodId);
+	
+	/**
+	* Query, provides a list of all self-service booths that have the ID entered.
+	* @param selfServiceStandNId The self-service-stand Id.
+	* @return list receiptGoods
+	*/
+	List<ReceiptGoods> findBySelfServiceStandNr_SelfServiceStandNIdOrderByDateReceiptAsc(Integer selfServiceStandNId);
+	
+	/**
+	* Query, provides a list of all self-service booths that have the ID and product name entered.
+	* @param goodsName The goods name.
+	* @param selfServiceStandNId The self-service-stand Id.
+	* @return list receiptGoods
+	*/
+	List<ReceiptGoods> findByGoodsNr_GoodsNameNr_GoodsNameAndSelfServiceStandNr_SelfServiceStandNId(String goodsName, Integer selfServiceStandNId);
+	
+	/**
+	* Query, finds a list of all dates and goods In that match.
+	* @param dateReceipt The receipt date.
+	* @param goodsId The goods ID.
+	* @return list receiptGoods
+	*/
+	List<ReceiptGoods> findByDateReceiptAndGoodsNr_GoodsId(LocalDate dateReceipt, Integer goodsId);
+}
+\end{lstlisting}
+%##############################################################################################
+
+\lstset{language=java}
+\begin{lstlisting}[frame=tb, caption={Das Listing zeigt die Klasse UnitController im Paket controller}, label={lst:UnitController}]
+/**
+* The role Controller class outputs a list of all existing units.
+* It is possible to create new units.
+* Units can also be changed and deleted, but only if they are not yet used in another table.
+*
+* <p>
+* Provides the following endpoints: <br>
+* - GET /role/ <br>
+* - POST /role/{unitName} <br>
+* - DELETE /role/{oldUnitName} <br>
+* - PUT /role/{oldUnitName}/{newUnitName} <br>
+*/
+@RestController
+@RequestMapping("/unit")
+public class UnitController {
+	
+	/**
+	* Logger of the unitController class.
+	*/
+	private static final Logger LOGGER = LoggerFactory.getLogger(UnitController.class);
+	
+	/**
+	* unitRepository to handle unit information.
+	*/
+	private final UnitRepository unitRepository;
+	
+	/**
+	* goodsRepository to handle goods information.
+	*/
+	private final GoodsRepository goodsRepository;
+	
+	public UnitController(UnitRepository unitRepository, GoodsRepository goodsRepository) {
+		this.unitRepository = unitRepository;
+		this.goodsRepository = goodsRepository;
+	}
+	
+	/**
+	* Method returns a sorted list with all units.
+	*
+	* @return json list with all units
+	*/
+	@GetMapping(path = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+	private ResponseEntity<Object> getUnits() {
+		
+		//Query sorted list, sorted by unit name
+		return new ResponseEntity<>(unitRepository.findByOrderByUnitNameAsc(), HttpStatus.OK);
+	}
+	
+	/**
+	* Method creates a new unit, but only if it does not yet exist.
+	*
+	* @param unitName Name of the unit
+	* @return Http Status code: Create if a new unit has been created, otherwise no content
+	* and created unit.
+	*/
+	@PostMapping(path = "/{unitName}", produces = MediaType.APPLICATION_JSON_VALUE)
+	private ResponseEntity<Unit> createUnit(@PathVariable String unitName) {
+		
+		//excess whitespace is removed
+		unitName = unitName.trim();
+		
+		Unit newUnit = null;
+		
+		//It is checked whether the unit already exists.
+		if (!unitRepository.existsByUnitNameIs(unitName)) {
+			
+			//save the new unit
+			newUnit = unitRepository.save(new Unit(unitName));
+			
+			LOGGER.info("The unit " + unitName + " has been created.");
+		} else {
+			LOGGER.info("The unit " + unitName + " is already there.");
+		}
+		
+		// Set the http status by unit; CREATED if it is null, NO_CONTENT otherwise
+		final HttpStatus httpStatus = null != newUnit
+		? HttpStatus.CREATED
+		: HttpStatus.NO_CONTENT;
+		
+		return new ResponseEntity<>(newUnit, httpStatus);
+	}
+	
+	/**
+	* The method only deletes a unit from the list if it has not yet been used.
+	*
+	* @param unitName unit name
+	* @return message in Json format and Http status code
+	*/
+	@DeleteMapping(path = "/{unitName}", produces = MediaType.APPLICATION_JSON_VALUE)
+	private ResponseEntity<JSONObject> deleteUnit(@PathVariable String unitName) {
+		
+		//create new json object
+		JSONObject message = new JSONObject();
+		
+		//excess whitespace is removed
+		unitName = unitName.trim();
+		
+		//It is checked whether the unit is not used in the "goods" table.
+		if (!goodsRepository.existsByGoodsUnitNr_UnitName(unitName)) {
+			
+			Unit deleteUnit = new Unit();
+			deleteUnit.setUnitId(unitRepository.findByUnitName(unitName).getUnitId());
+			
+			//Delete Unit at the database
+			unitRepository.delete(deleteUnit);
+			
+			LOGGER.info("The unit " + unitName + " has been deleted.");
+			message.put("Message", "The unit " + unitName + " has been deleted.");
+			return new ResponseEntity<>(message, HttpStatus.OK);
+		} else {
+			LOGGER.info("The unit " + unitName + " is already in use. Deletion is no longer possible.");
+			message.put("Message", "The unit " + unitName + " is already in use. Deletion is no longer possible.");
+			return new ResponseEntity<>(message, HttpStatus.CONFLICT);
+		}
+	}
+	
+	/**
+	* The method only changes the name of a unit if it has not yet been used in the Goods table.
+	*
+	* @param oldUnitName old unit name
+	* @param newUnitName new unit name
+	* @return message in Json format and Http status code
+	*/
+	@PutMapping(path = "/{oldUnitName}/{newUnitName}", produces = MediaType.APPLICATION_JSON_VALUE)
+	private ResponseEntity<JSONObject> updateUnit(@PathVariable String oldUnitName, @PathVariable String newUnitName) {
+		
+		//create new json object
+		JSONObject message = new JSONObject();
+		
+		//excess whitespace is removed
+		oldUnitName = oldUnitName.trim();
+		newUnitName = newUnitName.trim();
+		
+		//It is checked whether the unit is not used in the "goods" table.
+		if (!goodsRepository.existsByGoodsUnitNr_UnitName(oldUnitName)) {
+			
+			Unit changeUnit = new Unit();
+			changeUnit.setUnitId(unitRepository.findByUnitName(oldUnitName).getUnitId());
+			
+			changeUnit.setUnitName(newUnitName);
+			
+			//change unit at the database
+			unitRepository.save(changeUnit);
+			
+			LOGGER.info("The name of the unit has been changed from " + oldUnitName + " to " + newUnitName + ".");
+			message.put("Message", "The name of the unit has been changed from " + oldUnitName + " to " + newUnitName + ".");
+			return new ResponseEntity<>(message, HttpStatus.OK);
+		} else {
+			LOGGER.info("The unit " + oldUnitName + " is already in use. Change is no longer possible.");
+			message.put("Message", "The unit " + oldUnitName + " is already in use. Change is no longer possible.");
+			return new ResponseEntity<>(message, HttpStatus.CONFLICT);
+		}
+	}
+}
+\end{lstlisting}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection *{Quellcode Client (Ausschnitt)}\label{QuellcodeClient}
+
+\lstset{language=java}
+\begin{lstlisting}[frame=tb, caption={Das Listing zeigt die CSS-Datei main-screen.component }, label={lst:main-screen.component}]
+.container {
+	display: grid;
+	grid-template-columns: 0.5fr 2fr 8fr 2fr 0.5fr;
+	grid-template-rows: 0.4fr 3.4fr 0.4fr 0.4fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:
+	"navbar navbar navbar navbar navbar"
+	"main main main main main"
+	"selectSelf selectSelf . . ."
+	"footer footer footer footer footer";
+}
+
+.navbar {
+	grid-area: navbar;
+	background: var(--colorGray);
+}
+
+.main {
+	grid-area: main;
+	background: white;
+}
+
+.footer {
+	grid-area: footer;
+	background: var(--colorGray);
+}
+
+.selectSelf {
+	grid-area: selectSelf;
+	background: white;
+}
+
+html,
+body {
+	height: 100%;
+	background: radial-gradient(var(--colorBackground2), var(--colorBackground1));
+	overflow: hidden;
+}
+
+.container-main-screen {
+	background: white;
+}	
+\end{lstlisting}
+%##############################################################################################
+\lstset{language=java}
+\begin{lstlisting}[frame=tb, caption={Das Listing zeigt die CSS-Datei main-screen.component }, label={lst:main-screen.component}]
+const myRoutes: Routes = [
+{
+	path: '',
+	component: MainScreenComponent,
+	children: [
+	{
+		path: 'goods',
+		component: GoodsComponent,
+		children: [
+		{
+			path: 'overview',
+			component: OverviewGoodsComponent
+		},
+		{
+			path: 'new',
+			component: NewGoodsComponent
+		},
+		{
+			path: 'change',
+			component: ChangeGoodsComponent
+		}, {
+			path: 'settings',
+			component: SettingsGoodsComponent
+		}
+		]
+	},
+	{
+		path: 'receipt',
+		component: ReceiptComponent,
+		children: [
+		{
+			path: 'new',
+			component: NewReceiptComponent
+		},
+		{
+			path: 'overview',
+			component: OverviewReceiptComponent
+		},
+		]
+	},
+	{
+		path: 'user',
+		component: UserComponent,
+		children: [
+		{
+			path: 'change',
+			component: ChangeUserComponent
+		},
+		{
+			path: 'create',
+			component: CreateUserComponent
+		},
+		{
+			path: 'overview',
+			component: OverviewUserComponent
+		}
+		]
+	},
+	{
+		path: 'statistics',
+		component: StatisticsComponent,
+		children: [
+		{
+			path: 'month',
+			component: MonthComponent
+		},
+		{
+			path: 'year',
+			component: YearComponent
+		}
+		]
+	},
+	{
+		path: 'self',
+		component: SelfServiceStandComponent,
+		children: [
+		{
+			path: 'add',
+			component: AddUserSelfComponent
+		},
+		{
+			path: 'change',
+			component: ChangeSelfComponent
+		},
+		{
+			path: 'overview',
+			component: OverviewSelfComponent
+		}
+		]
+	},
+	{
+		path: 'end',
+		component: EndOfDayComponent,
+		children: [
+		{
+			path: 'overview',
+			component: OverviewEndComponent
+		},
+		{
+			path: 'new',
+			component: NewEndComponent
+		},
+		{
+			path: 'create',
+			component: EndOfDayPdfComponent
+		}
+		]
+	},
+	{
+		path: '',
+		component: MainMenuComponent
+	},
+	{
+		path:'**',
+		component: PageNotFoundComponent,
+	},
+	]
+}
+]
+
+@NgModule({
+	declarations: [],
+	imports: [
+	CommonModule,
+	RouterModule.forChild((myRoutes))
+	],
+	exports: [RouterModule]
+})
+export class MainScreenRoutesModule {
+}
+\end{lstlisting}
+%##############################################################################################
+
+\lstset{language=java}
+\begin{lstlisting}[frame=tb, caption={Das Listing zeigt die TypeScript-Datei change-goods.ts }, label={lst:main-screen.component2}]
+
+/**
+* Class provides an overview of all goods.
+*/
+export class OverviewGoodsComponent implements OnInit {
+	
+	//empty list goods
+	goodsList: Goods[] = [];
+	
+	//Heading of the table
+	header: string[] = ['Warenname', 'Einheit', 'Preis', 'Bemerkung', 'im Verkauf'];
+	
+	//Saves whether a result was found
+	searchResult: boolean = true;
+	
+	//List of search results
+	searchResultList: Goods[] = [];
+	
+	
+	constructor(private client: HttpClient,
+	private communication: ServerCommunicationServiceService
+	) {
+	}
+	
+	ngOnInit(): void {
+		this.loadGoods();
+		this.searchResultList = this.goodsList;
+	}
+	
+	//Filter the list of goods according to the search results and save them in the list
+	search(event: Event) {
+		
+		//Old search results are deleted
+		this.searchResultList = [];
+		
+		//Saves the keystrokes
+		const filterValue = (event.target as HTMLInputElement).value;
+		
+		//Searches the list for the word
+		for (let key in this.goodsList) {
+			if (this.goodsList.hasOwnProperty(key)) {
+				if (
+				this.goodsList[key].goodsName.includes(filterValue) ||
+				this.goodsList[key].unitName.includes(filterValue) ||
+				this.goodsList[key].goodsPrice.toString().includes(filterValue) ||
+				this.goodsList[key].goodsNote.includes(filterValue)
+				) {
+					//Saves all found experiences in the list
+					this.searchResultList.push((this.goodsList[key]));
+				}
+			}
+			//If not found, the variable is set to false.
+			this.searchResult = this.searchResultList.length > 0;
+		}
+	}
+	
+	// Loads a list of goods from the server
+	private loadGoods() {
+		
+		//set url
+		let url = 'goods/' + localStorage.getItem('key_selfServiceStand_name');
+		
+		//communication Server
+		this.communication
+		.serverCommunication(url, '', 'get', true)
+		.subscribe((response: any) => {
+			
+			//Saves the goods in a list
+			for (var entry of response) {
+				this.goodsList.push({
+					goodsId: entry.goodsId,
+					goodsName: entry.goodsNameNr.goodsName,
+					unitName: entry.goodsUnitNr.unitName,
+					goodsPrice: entry.goodsPrice,
+					goodsNote: entry.goodsNote,
+					goodsActive: entry.goodsActive
+				});
+			}
+		}, error => {
+			console.log(error);
+		}
+		);
+	}
+}
+\end{lstlisting}
+%##############################################################################################

@@ -1,0 +1,39 @@
+<br>
+<h2>Übersicht Warenbewegungen (Zugang/Abgang)</h2>
+<br>
+
+<mat-form-field appearance="fill">
+  <mat-label>Suche</mat-label>
+  <input #input (keyup)="search($event)" matInput placeholder="Suche">
+</mat-form-field>
+
+
+<div class="container mt-3">
+  <table *ngIf="searchResult" class="table table-bordered">
+    <thead class="thead-light">
+    <tr>
+      <th *ngFor="let column of headerRe">
+        {{column}}
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let search of searchResultList">
+      <td>{{search.goodsName}}</td>
+      <td>{{search.dateReceipt}}</td>
+      <td>{{search.goodsPieces}}</td>
+      <td>{{search.goodsUnit}}</td>
+      <td>{{search.userName}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div *ngIf="!searchResult" class="alert alert-warning" role="alert">
+  Keine Suchergebnisse.
+</div>
+
+
+
+

@@ -1,0 +1,103 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<form (ngSubmit)='registration()' [formGroup]="registrationForm">
+  <div class="form-group">
+    <label for="userNameRe">Benutzername</label>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <i class="fa fa-user-o"></i>
+        </div>
+      </div>
+      <input class="form-control" formControlName="userNameRe" id="userNameRe" name="userNameRe"
+             placeholder="Benutzername" type="text">
+    </div>
+  </div>
+
+  <ng-container *ngIf="userNameCorrectly === false">
+    <div class="alert alert-warning" role="alert">
+      {{errorMessageUserName}}
+    </div>
+  </ng-container>
+
+  <div class="form-group">
+    <label for="email">E-Mail-Adresse</label>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <i class="fa fa-envelope-o"></i>
+        </div>
+      </div>
+      <input class="form-control" formControlName="email" id="email" name="email" placeholder="E-Mail-Adresse"
+             type="text">
+    </div>
+  </div>
+
+  <ng-container *ngIf="emailCorrectly === false">
+    <div class="alert alert-warning" role="alert">
+      {{errorMessageEmail}}
+    </div>
+  </ng-container>
+
+  <div class="form-group">
+    <label for="selfServiceStandName">Name des Selbstbedienungsstandes</label>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <i class="fa fa-shopping-basket"></i>
+        </div>
+      </div>
+      <input class="form-control" formControlName="selfServiceStandName" id="selfServiceStandName"
+             name="selfServiceStandName" placeholder="Name Selbstbedienungsstand" type="text">
+    </div>
+  </div>
+
+  <ng-container *ngIf="selfServiceStandCorrectly === false">
+    <div class="alert alert-warning" role="alert">
+      {{errorMessageSelfServiceStandName}}
+    </div>
+  </ng-container>
+
+  <div class="form-group">
+    <label for="userPassword1">Passwort</label>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <i class="fa fa-key"></i>
+        </div>
+      </div>
+      <input class="form-control" formControlName="userPassword1" id="userPassword1" name="userPassword1"
+             placeholder="Passwort" type="password">
+    </div>
+  </div>
+
+  <ng-container *ngIf="userPasswordCorrectly === false">
+    <div class="alert alert-warning" role="alert">
+      {{errorMessagePassword}}
+    </div>
+  </ng-container>
+
+  <div class="form-group">
+    <label for="userPassword2">Passwort wiederholen</label>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <i class="fa fa-key"></i>
+        </div>
+      </div>
+      <input class="form-control" formControlName="userPassword2" id="userPassword2" name="userPassword2"
+             placeholder="Passwort" type="password">
+    </div>
+  </div>
+
+  <ng-container *ngIf="userPasswordDouble === false">
+    <div class="alert alert-warning" role="alert">
+      {{errorMessagePasswordDouble}}
+    </div>
+  </ng-container>
+
+  <div class="form-group">
+    <button class="btn btn-primary" name="submit" type="submit">Registrierung</button>
+  </div>
+</form>

@@ -1,0 +1,13 @@
+:root {
+  --colorBackground1: #3dabb9;
+  --colorBackground2: #b0b6b1;
+  --colorGray: #b6b2b2;
+}
+
+html,
+body {
+  height: 100%;
+  background: radial-gradient(var(--colorBackground2), var(--colorBackground1));
+}
+
+

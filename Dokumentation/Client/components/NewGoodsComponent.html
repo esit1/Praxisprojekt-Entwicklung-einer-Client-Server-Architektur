@@ -1,0 +1,1098 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  NewGoodsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../injectables/ServerCommunicationServiceService.html" target="_self" >ServerCommunicationServiceService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-new-goods</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./new-goods.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./new-goods.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createNew" >createNew</a>
+                            </li>
+                            <li>
+                                <a href="#goodsName" >goodsName</a>
+                            </li>
+                            <li>
+                                <a href="#goodsNameList" >goodsNameList</a>
+                            </li>
+                            <li>
+                                <a href="#goodsNote" >goodsNote</a>
+                            </li>
+                            <li>
+                                <a href="#goodsPrice" >goodsPrice</a>
+                            </li>
+                            <li>
+                                <a href="#message" >message</a>
+                            </li>
+                            <li>
+                                <a href="#newGoodsForm" >newGoodsForm</a>
+                            </li>
+                            <li>
+                                <a href="#selectedValueGoodsName" >selectedValueGoodsName</a>
+                            </li>
+                            <li>
+                                <a href="#selectedValueUnitName" >selectedValueUnitName</a>
+                            </li>
+                            <li>
+                                <a href="#unitList" >unitList</a>
+                            </li>
+                            <li>
+                                <a href="#unitName" >unitName</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getListWithGoodsName" >getListWithGoodsName</a>
+                            </li>
+                            <li>
+                                <a href="#getListWithUnit" >getListWithUnit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#saveEntry" >saveEntry</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(client: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, communication: <a href="../injectables/ServerCommunicationServiceService.html" target="_self">ServerCommunicationServiceService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:44</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>client</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>communication</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ServerCommunicationServiceService.html" target="_self" >ServerCommunicationServiceService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getListWithGoodsName"></a>
+                    <span class="name">
+                        <span ><b>getListWithGoodsName</b></span>
+                        <a href="#getListWithGoodsName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getListWithGoodsName()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getListWithUnit"></a>
+                    <span class="name">
+                        <span ><b>getListWithUnit</b></span>
+                        <a href="#getListWithUnit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getListWithUnit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveEntry"></a>
+                    <span class="name">
+                        <span ><b>saveEntry</b></span>
+                        <a href="#saveEntry"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveEntry()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createNew"></a>
+                    <span class="name">
+                        <span ><b>createNew</b></span>
+                        <a href="#createNew"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goodsName"></a>
+                    <span class="name">
+                        <span ><b>goodsName</b></span>
+                        <a href="#goodsName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goodsNameList"></a>
+                    <span class="name">
+                        <span ><b>goodsNameList</b></span>
+                        <a href="#goodsNameList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>GoodsName[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goodsNote"></a>
+                    <span class="name">
+                        <span ><b>goodsNote</b></span>
+                        <a href="#goodsNote"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goodsPrice"></a>
+                    <span class="name">
+                        <span ><b>goodsPrice</b></span>
+                        <a href="#goodsPrice"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="message"></a>
+                    <span class="name">
+                        <span ><b>message</b></span>
+                        <a href="#message"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newGoodsForm"></a>
+                    <span class="name">
+                        <span ><b>newGoodsForm</b></span>
+                        <a href="#newGoodsForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({
+    goodsNameNew: new FormControl(null, Validators.required),
+    unitNameNew: new FormControl(null, Validators.required),
+    goodsPriceNew: new FormControl(null, Validators.required),
+    goodsNoteNew: new FormControl(null, Validators.required),
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedValueGoodsName"></a>
+                    <span class="name">
+                        <span ><b>selectedValueGoodsName</b></span>
+                        <a href="#selectedValueGoodsName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedValueUnitName"></a>
+                    <span class="name">
+                        <span ><b>selectedValueUnitName</b></span>
+                        <a href="#selectedValueUnitName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unitList"></a>
+                    <span class="name">
+                        <span ><b>unitList</b></span>
+                        <a href="#unitList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Unit.html" target="_self" >Unit[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unitName"></a>
+                    <span class="name">
+                        <span ><b>unitName</b></span>
+                        <a href="#unitName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/main-screen/main/goods/new-goods/new-goods.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {FormControl, FormGroup, Validators} from &#x27;@angular/forms&#x27;;
+import {ServerCommunicationServiceService} from &#x27;../../../../../service/server-communication.service&#x27;;
+import {HttpClient} from &#x27;@angular/common/http&#x27;;
+import {Router} from &quot;@angular/router&quot;;
+import {Unit} from &quot;../../../../../interface/unit&quot;;
+import {GoodsName} from &quot;../../../../../interface/goods-name&quot;;
+
+
+@Component({
+  selector: &#x27;app-new-goods&#x27;,
+  templateUrl: &#x27;./new-goods.component.html&#x27;,
+  styleUrls: [&#x27;./new-goods.component.css&#x27;],
+  providers: [ServerCommunicationServiceService],
+})
+
+/**
+ * Create a new goods
+ */
+export class NewGoodsComponent implements OnInit {
+
+  //the goods properties
+  goodsName: string | undefined;
+  unitName: string | undefined;
+  goodsPrice: number | undefined;
+  goodsNote: string | undefined;
+  createNew: boolean &#x3D; false;
+  message: String &#x3D; &#x27;&#x27;;
+
+  selectedValueGoodsName: string | null | undefined;
+  selectedValueUnitName: string | null | undefined;
+
+  newGoodsForm &#x3D; new FormGroup({
+    goodsNameNew: new FormControl(null, Validators.required),
+    unitNameNew: new FormControl(null, Validators.required),
+    goodsPriceNew: new FormControl(null, Validators.required),
+    goodsNoteNew: new FormControl(null, Validators.required),
+  });
+
+  //list of units
+  unitList: Unit[] &#x3D; [];
+
+  //list of goods name
+  goodsNameList: GoodsName[] &#x3D; [];
+
+  constructor(private client: HttpClient,
+              private communication: ServerCommunicationServiceService,
+              private router: Router
+  ) {
+  }
+
+  //loads list with goods name and units
+  ngOnInit(): void {
+    this.getListWithGoodsName();
+    this.getListWithUnit();
+  }
+
+//saves the new entry and transfers it to the server
+  saveEntry() {
+
+    //If the note is empty, this &#x27;&#x27; is used.
+    if (this.newGoodsForm.value.goodsNoteNew &#x3D;&#x3D;&#x3D; null) {
+      this.newGoodsForm.value.goodsNoteNew &#x3D; &#x27;&#x27;;
+    }
+
+    //set url
+    let url &#x3D; &#x27;goods/&#x27;;
+    let data &#x3D; {
+      goodsName: this.newGoodsForm.value.goodsNameNew,
+      unitName: this.newGoodsForm.value.unitNameNew,
+      goodsPrice: this.newGoodsForm.value.goodsPriceNew,
+      goodsNote: this.newGoodsForm.value.goodsNoteNew,
+      selfServiceStandName: localStorage.getItem(&#x27;key_selfServiceStand_name&#x27;),
+      userName: localStorage.getItem(&#x27;key_user_name&#x27;),
+      goodsActive:true,
+    };
+
+    //communication Server
+    this.communication
+      .serverCommunication(url, data, &#x27;post&#x27;, false)
+      .subscribe((response: any) &#x3D;&gt; {
+            this.createNew &#x3D; true;
+            this.message &#x3D; &#x27;Die Ware &#x27; + this.goodsName + &#x27;wurde angelegt&#x27;;
+
+        alert(&#x27;Der Eintrag wurde erfolgreich angelegt&#x27;);
+            this.router.navigate([&#x27;/goods/overview&#x27;]).then(() &#x3D;&gt; {
+              window.location.reload();
+            });
+        }, error &#x3D;&gt; {
+          alert(&#x27;Fehlermeldung&#x27; + error);
+          console.log(error);
+        }
+      );
+  }
+
+
+  //Get List with goods name
+  getListWithGoodsName() {
+
+    //set url
+    let url &#x3D; &#x27;goodsName/&#x27;;
+
+    //communication Server
+    this.communication
+      .serverCommunication(url, &#x27;&#x27;, &#x27;get&#x27;, true)
+      .subscribe((response: any) &#x3D;&gt; {
+          //save entry in list
+          for (const entry of response) {
+            this.goodsNameList.push({goodsName: entry.goodsName});
+          }
+        }, error &#x3D;&gt; {
+          console.log(error);
+        }
+      );
+  }
+
+  //Get List with goods name
+  getListWithUnit() {
+
+    //set url
+    let url &#x3D; &#x27;unit/&#x27;;
+
+    //communication Server
+    this.communication
+      .serverCommunication(url, &#x27;&#x27;, &#x27;get&#x27;, true)
+      .subscribe((response: any) &#x3D;&gt; {
+          //save entry in list
+          for (const entry of response) {
+            this.unitList.push({unitName: entry.unitName});
+          }
+        }, error &#x3D;&gt; {
+          console.log(error);
+        }
+      );
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;link href&#x3D;&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+&lt;link href&#x3D;&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+
+&lt;br&gt;
+&lt;h2&gt;Neue Ware anlegen&lt;/h2&gt;
+&lt;br&gt;
+&lt;form (ngSubmit)&#x3D;&#x27;saveEntry()&#x27; [formGroup]&#x3D;&quot;newGoodsForm&quot;&gt;
+  &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+    &lt;label class&#x3D;&quot;col-4 col-form-label&quot;&gt;Warenname:&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col-8&quot;&gt;
+      &lt;mat-select [(ngModel)]&#x3D;&quot;selectedValueGoodsName&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;goodsNameNew&quot;
+                  name&#x3D;&quot;goodsName&quot;&gt;
+        &lt;mat-option *ngFor&#x3D;&quot;let goodsName of goodsNameList&quot; [value]&#x3D;&quot;goodsName.goodsName&quot;&gt;
+          {{goodsName.goodsName}}
+        &lt;/mat-option&gt;
+      &lt;/mat-select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+    &lt;label class&#x3D;&quot;col-4 col-form-label&quot;&gt;Einheit:&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col-8&quot;&gt;
+      &lt;mat-select [(ngModel)]&#x3D;&quot;selectedValueUnitName&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;unitNameNew&quot;
+                  name&#x3D;&quot;unitName&quot;&gt;
+        &lt;mat-option *ngFor&#x3D;&quot;let unitName of unitList&quot; [value]&#x3D;&quot;unitName.unitName&quot;&gt;
+          {{unitName.unitName}}
+        &lt;/mat-option&gt;
+      &lt;/mat-select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+  &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+    &lt;label class&#x3D;&quot;col-4 col-form-label&quot; for&#x3D;&quot;goodsPrice&quot;&gt;Preis:&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col-8&quot;&gt;
+      &lt;input class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;goodsPriceNew&quot; id&#x3D;&quot;goodsPrice&quot; name&#x3D;&quot;goodsPrice&quot; required&#x3D;&quot;required&quot;
+             type&#x3D;&quot;number&quot;
+             value&#x3D;&quot;{{goodsPrice}}&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+    &lt;label class&#x3D;&quot;col-4 col-form-label&quot; for&#x3D;&quot;goodsNote&quot;&gt;Bemerkung:&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col-8&quot;&gt;
+      &lt;textarea class&#x3D;&quot;form-control&quot; cols&#x3D;&quot;40&quot; formControlName&#x3D;&quot;goodsNoteNew&quot; id&#x3D;&quot;goodsNote&quot; name&#x3D;&quot;goodsNote&quot;
+                rows&#x3D;&quot;5&quot;
+                type&#x3D;&quot;text&quot;&gt;{{goodsNote}}&lt;/textarea&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;ng-container *ngIf&#x3D;&quot;createNew &#x3D;&#x3D;&#x3D; true&quot;&gt;
+    &lt;div class&#x3D;&quot;alert-info&quot; role&#x3D;&quot;alert&quot;&gt;
+      {{message}}
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+
+  &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+    &lt;div class&#x3D;&quot;offset-4 col-8&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn-primary&quot; name&#x3D;&quot;addGoods&quot; type&#x3D;&quot;submit&quot;&gt;Speichern&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./new-goods.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+
+.mat-select {
+  border: #b6b2b2 solid 1px;
+}
+
+input, textarea {
+  border: #b6b2b2 solid 1px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><br><h2>Neue Ware anlegen</h2><br><form (ngSubmit)=\'saveEntry()\' [formGroup]="newGoodsForm">  <div class="form-group row">    <label class="col-4 col-form-label">Warenname:</label>    <div class="col-8">      <mat-select [(ngModel)]="selectedValueGoodsName" class="form-control" formControlName="goodsNameNew"                  name="goodsName">        <mat-option *ngFor="let goodsName of goodsNameList" [value]="goodsName.goodsName">          {{goodsName.goodsName}}        </mat-option>      </mat-select>    </div>  </div>  <div class="form-group row">    <label class="col-4 col-form-label">Einheit:</label>    <div class="col-8">      <mat-select [(ngModel)]="selectedValueUnitName" class="form-control" formControlName="unitNameNew"                  name="unitName">        <mat-option *ngFor="let unitName of unitList" [value]="unitName.unitName">          {{unitName.unitName}}        </mat-option>      </mat-select>    </div>  </div>  <div class="form-group row">    <label class="col-4 col-form-label" for="goodsPrice">Preis:</label>    <div class="col-8">      <input class="form-control" formControlName="goodsPriceNew" id="goodsPrice" name="goodsPrice" required="required"             type="number"             value="{{goodsPrice}}">    </div>  </div>  <div class="form-group row">    <label class="col-4 col-form-label" for="goodsNote">Bemerkung:</label>    <div class="col-8">      <textarea class="form-control" cols="40" formControlName="goodsNoteNew" id="goodsNote" name="goodsNote"                rows="5"                type="text">{{goodsNote}}</textarea>    </div>  </div>  <ng-container *ngIf="createNew === true">    <div class="alert-info" role="alert">      {{message}}    </div>  </ng-container>  <div class="form-group row">    <div class="offset-4 col-8">      <button class="btn btn-primary" name="addGoods" type="submit">Speichern</button>    </div>  </div></form></div>'
+    var COMPONENTS = [{'name': 'AddUserSelfComponent', 'selector': 'app-add-user-self'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChangeGoodsComponent', 'selector': 'app-change-goods'},{'name': 'ChangeSelfComponent', 'selector': 'app-change-self'},{'name': 'ChangeUserComponent', 'selector': 'app-change-user'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CreateUserComponent', 'selector': 'app-create-user'},{'name': 'DataProtectionComponent', 'selector': 'app-data-protection'},{'name': 'EndOfDayComponent', 'selector': 'app-end-of-day'},{'name': 'EndOfDayPdfComponent', 'selector': 'app-end-of-day-pdf'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'GoodsComponent', 'selector': 'app-goods'},{'name': 'ImprintComponent', 'selector': 'app-imprint'},{'name': 'LoginAndRegistrationComponent', 'selector': 'app-login-and-registration'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MainScreenComponent', 'selector': 'app-main-screen'},{'name': 'MonthComponent', 'selector': 'app-month'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NewEndComponent', 'selector': 'app-new-end'},{'name': 'NewGoodsComponent', 'selector': 'app-new-goods'},{'name': 'NewReceiptComponent', 'selector': 'app-new-receipt'},{'name': 'OverviewEndComponent', 'selector': 'app-overview-end'},{'name': 'OverviewGoodsComponent', 'selector': 'app-overview-goods'},{'name': 'OverviewReceiptComponent', 'selector': 'app-overview-receipt'},{'name': 'OverviewSelfComponent', 'selector': 'app-overview-self'},{'name': 'OverviewUserComponent', 'selector': 'app-overview-user'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PasswordResetComponent', 'selector': 'app-password-reset'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'SelectionSelfServiceStandComponent', 'selector': 'app-selection-self-service-stand'},{'name': 'SelfServiceStandComponent', 'selector': 'app-self-service-stand'},{'name': 'SettingsGoodsComponent', 'selector': 'app-settings-goods'},{'name': 'StatisticsComponent', 'selector': 'app-statistics'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'YearComponent', 'selector': 'app-year'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NewGoodsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NewGoodsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

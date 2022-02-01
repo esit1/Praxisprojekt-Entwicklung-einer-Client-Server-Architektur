@@ -1,0 +1,28 @@
+a:link {
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+}
+
+a:active {
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+}
+
+a:hover {
+  text-decoration: none;
+  text-underline: none;
+
+  font: var(--colorGray)
+}
+
+.pageNotFound{
+  background: white;
+}

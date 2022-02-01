@@ -1,0 +1,823 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  NewEndComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/main-screen/main/end-of-day/new-end/new-end.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Class creates a new daily closing</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-new-end</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./new-end.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./new-end.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#endForm" >endForm</a>
+                            </li>
+                            <li>
+                                <a href="#endOfTheDayList" >endOfTheDayList</a>
+                            </li>
+                            <li>
+                                <a href="#model" >model</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#countGoods" >countGoods</a>
+                            </li>
+                            <li>
+                                <a href="#getlistwithGoodsAktive" >getlistwithGoodsAktive</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#name" >name</a>
+                                </li>
+                                <li>
+                                    <a href="#goodsCountEn" >goodsCountEn</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, client: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, communication: <a href="../injectables/ServerCommunicationServiceService.html" target="_self">ServerCommunicationServiceService</a>, convertDate: <a href="../injectables/ConvertDateService.html" target="_self">ConvertDateService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/components/main-screen/main/end-of-day/new-end/new-end.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>client</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>communication</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ServerCommunicationServiceService.html" target="_self" >ServerCommunicationServiceService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>convertDate</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ConvertDateService.html" target="_self" >ConvertDateService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="countGoods"></a>
+                    <span class="name">
+                        <span ><b>countGoods</b></span>
+                        <a href="#countGoods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>countGoods()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/components/main-screen/main/end-of-day/new-end/new-end.component.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getlistwithGoodsAktive"></a>
+                    <span class="name">
+                        <span ><b>getlistwithGoodsAktive</b></span>
+                        <a href="#getlistwithGoodsAktive"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getlistwithGoodsAktive()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/components/main-screen/main/end-of-day/new-end/new-end.component.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/components/main-screen/main/end-of-day/new-end/new-end.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="endForm"></a>
+                    <span class="name">
+                        <span ><b>endForm</b></span>
+                        <a href="#endForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.formBuilder.group({
+    datepickerEn: new FormControl(&#x27;&#x27;, [ Validators.required ]),
+    goodsCountEn: this.formBuilder.array([
+    ], [Validators.required])
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/main-screen/main/end-of-day/new-end/new-end.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="endOfTheDayList"></a>
+                    <span class="name">
+                        <span ><b>endOfTheDayList</b></span>
+                        <a href="#endOfTheDayList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/EndOfDay.html" target="_self" >EndOfDay[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/main-screen/main/end-of-day/new-end/new-end.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="model"></a>
+                    <span class="name">
+                        <span ><b>model</b></span>
+                        <a href="#model"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>NgbDateStruct | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/main-screen/main/end-of-day/new-end/new-end.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="name"></a>
+                        <span class="name"><b>name</b><a href="#name"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>name()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/main-screen/main/end-of-day/new-end/new-end.component.ts:32</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="goodsCountEn"></a>
+                        <span class="name"><b>goodsCountEn</b><a href="#goodsCountEn"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>goodsCountEn()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/main-screen/main/end-of-day/new-end/new-end.component.ts:36</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {HttpClient} from &quot;@angular/common/http&quot;;
+import {ServerCommunicationServiceService} from &quot;../../../../../service/server-communication.service&quot;;
+import {EndOfDay} from &quot;../../../../../interface/end-of-day&quot;;
+import {NgbDateStruct} from &quot;@ng-bootstrap/ng-bootstrap&quot;;
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from &quot;@angular/forms&quot;;
+import {ConvertDateService} from &quot;../../../../../service/convert-date.service&quot;;
+
+/**
+ * Class creates a new daily closing
+ */
+@Component({
+  selector: &#x27;app-new-end&#x27;,
+  templateUrl: &#x27;./new-end.component.html&#x27;,
+  styleUrls: [&#x27;./new-end.component.css&#x27;]
+})
+export class NewEndComponent implements OnInit {
+
+  // List with all end of the day entries
+  endOfTheDayList: EndOfDay[] &#x3D;[];
+
+  //datepicker
+  model: NgbDateStruct | undefined;
+
+  endForm &#x3D; this.formBuilder.group({
+    datepickerEn: new FormControl(&#x27;&#x27;, [ Validators.required ]),
+    goodsCountEn: this.formBuilder.array([
+    ], [Validators.required])
+  });
+
+//name of goods
+get name() {
+    return this.endForm.get(&#x27;name&#x27;) as FormControl;
+  }
+  //return goods count
+  get goodsCountEn() {
+    return this.endForm.get(&#x27;goodsCountEn&#x27;) as FormArray;
+  }
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private client: HttpClient,
+    private communication: ServerCommunicationServiceService,
+    private convertDate : ConvertDateService
+  ) {
+  }
+
+  //Loads a list with all active goods
+  ngOnInit(): void {
+    this.getlistwithGoodsAktive();
+  }
+
+//A list of all active goods
+  getlistwithGoodsAktive() {
+
+    //set url
+    let url &#x3D; &#x27;goods/active/&#x27; + localStorage.getItem(&#x27;key_selfServiceStand_name&#x27;);
+
+    //communication Server
+    this.communication
+      .serverCommunication(url, &#x27;&#x27;, &#x27;get&#x27;, true)
+      .subscribe((response: any) &#x3D;&gt; {
+
+          //save entry in list
+          for (var entry of response) {
+            this.endOfTheDayList.push({
+              goodsId: entry.goodsId,
+              goodsName: entry.goodsNameNr.goodsName,
+              goodsNote: entry.goodsNote,
+              goodsPrice: entry.goodsPrice,
+              unitName: entry.goodsUnitNr.unitName,
+              goodsCount: 0
+              }
+            );
+            //create an new form control element
+            this.goodsCountEn.push(new FormControl());
+          }
+        }, error &#x3D;&gt; {
+          console.log(error);
+        }
+      );
+  }
+
+  //Get List with self-service-stand name
+
+  countGoods() {
+
+    let convertDateString: String &#x3D; this.convertDate.convertDate(this.endForm.value.datepickerEn.year, this.endForm.value.datepickerEn.month, this.endForm.value.datepickerEn.day);
+
+    for (let i in this.endOfTheDayList ){
+
+    //set url
+    let url &#x3D; &#x27;endOfDay/&#x27;;
+    let data &#x3D; {
+      graduationDate: convertDateString,
+      goodsID: this.endOfTheDayList[i].goodsId,
+      userName: localStorage.getItem(&#x27;key_user_name&#x27;),
+      selfServiceStandName: localStorage.getItem(&#x27;key_selfServiceStand_name&#x27;),
+      graduationCount: this.endForm.value.goodsCountEn[i]
+    };
+
+    //communication Server
+    this.communication
+      .serverCommunication(url, data, &#x27;post&#x27;, false)
+      .subscribe((response: any) &#x3D;&gt; {
+
+        }, error &#x3D;&gt; {
+          alert(error);
+          console.log(error);
+        }
+      );
+  }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;br&gt;
+&lt;h2&gt;Tagesabrechnung&lt;/h2&gt;
+&lt;br&gt;
+
+&lt;div&gt;
+  &lt;form [formGroup]&#x3D;&quot;endForm&quot; (ngSubmit)&#x3D;&quot;countGoods()&quot;&gt;
+
+
+
+    &lt;div formArrayName&#x3D;&quot;goodsCountEn&quot;&gt;
+      &lt;div *ngFor&#x3D;&quot;let y of goodsCountEn.controls; index as i&quot;&gt;
+        &lt;br&gt;
+        &lt;h4&gt;{{endOfTheDayList[i].goodsName}}&lt;/h4&gt;
+        &lt;h5&gt;Einheit: {{endOfTheDayList[i].unitName}}, Preis {{endOfTheDayList[i].goodsPrice}} €&lt;/h5&gt;
+        &lt;label &gt;Anzahl am Tagesende: &lt;/label&gt;
+        &lt;input [formControlName]&#x3D;&quot;i&quot; name&#x3D;&quot;text&quot; type&#x3D;&quot;number&quot;  id&#x3D;&quot;text&quot;&gt;
+        &lt;br&gt;
+        &lt;hr&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+      &lt;div class&#x3D;&quot;input-group&quot;&gt;
+        &lt;label class&#x3D;&quot;col-4 col-form-label&quot; for&#x3D;&quot;datepickerEn&quot;&gt;Datum&lt;/label&gt;
+        &lt;input #d&#x3D;&quot;ngbDatepicker&quot; [(ngModel)]&#x3D;&quot;model&quot;
+               class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;datepickerEn&quot; id&#x3D;&quot;datepickerEn&quot; name&#x3D;&quot;datepickerEn&quot; ngbDatepicker placeholder&#x3D;&quot;yyyy-mm-tt&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group-append&quot;&gt;
+          &lt;button (click)&#x3D;&quot;d.toggle()&quot; class&#x3D;&quot;btn btn-outline-secondary calendar&quot; type&#x3D;&quot;button&quot;&gt;&lt;i
+            class&#x3D;&quot;fa fa-calendar&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+      &lt;div class&#x3D;&quot;offset-4 col-8&quot;&gt;
+        &lt;button name&#x3D;&quot;submit&quot; type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Absenden&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./new-end.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.entry{
+  text-align: center
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><br><h2>Tagesabrechnung</h2><br><div>  <form [formGroup]="endForm" (ngSubmit)="countGoods()">    <div formArrayName="goodsCountEn">      <div *ngFor="let y of goodsCountEn.controls; index as i">        <br>        <h4>{{endOfTheDayList[i].goodsName}}</h4>        <h5>Einheit: {{endOfTheDayList[i].unitName}}, Preis {{endOfTheDayList[i].goodsPrice}} €</h5>        <label >Anzahl am Tagesende: </label>        <input [formControlName]="i" name="text" type="number"  id="text">        <br>        <hr>      </div>    </div>    <div class="form-group row">      <div class="input-group">        <label class="col-4 col-form-label" for="datepickerEn">Datum</label>        <input #d="ngbDatepicker" [(ngModel)]="model"               class="form-control" formControlName="datepickerEn" id="datepickerEn" name="datepickerEn" ngbDatepicker placeholder="yyyy-mm-tt">        <div class="input-group-append">          <button (click)="d.toggle()" class="btn btn-outline-secondary calendar" type="button"><i            class="fa fa-calendar"></i></button>        </div>      </div>    </div>    <div class="form-group row">      <div class="offset-4 col-8">        <button name="submit" type="submit" class="btn btn-primary">Absenden</button>      </div>    </div>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AddUserSelfComponent', 'selector': 'app-add-user-self'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChangeGoodsComponent', 'selector': 'app-change-goods'},{'name': 'ChangeSelfComponent', 'selector': 'app-change-self'},{'name': 'ChangeUserComponent', 'selector': 'app-change-user'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CreateUserComponent', 'selector': 'app-create-user'},{'name': 'DataProtectionComponent', 'selector': 'app-data-protection'},{'name': 'EndOfDayComponent', 'selector': 'app-end-of-day'},{'name': 'EndOfDayPdfComponent', 'selector': 'app-end-of-day-pdf'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'GoodsComponent', 'selector': 'app-goods'},{'name': 'ImprintComponent', 'selector': 'app-imprint'},{'name': 'LoginAndRegistrationComponent', 'selector': 'app-login-and-registration'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MainScreenComponent', 'selector': 'app-main-screen'},{'name': 'MonthComponent', 'selector': 'app-month'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NewEndComponent', 'selector': 'app-new-end'},{'name': 'NewGoodsComponent', 'selector': 'app-new-goods'},{'name': 'NewReceiptComponent', 'selector': 'app-new-receipt'},{'name': 'OverviewEndComponent', 'selector': 'app-overview-end'},{'name': 'OverviewGoodsComponent', 'selector': 'app-overview-goods'},{'name': 'OverviewReceiptComponent', 'selector': 'app-overview-receipt'},{'name': 'OverviewSelfComponent', 'selector': 'app-overview-self'},{'name': 'OverviewUserComponent', 'selector': 'app-overview-user'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PasswordResetComponent', 'selector': 'app-password-reset'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'SelectionSelfServiceStandComponent', 'selector': 'app-selection-self-service-stand'},{'name': 'SelfServiceStandComponent', 'selector': 'app-self-service-stand'},{'name': 'SettingsGoodsComponent', 'selector': 'app-settings-goods'},{'name': 'StatisticsComponent', 'selector': 'app-statistics'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'YearComponent', 'selector': 'app-year'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NewEndComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NewEndComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

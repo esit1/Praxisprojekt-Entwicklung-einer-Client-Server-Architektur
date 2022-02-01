@@ -1,0 +1,130 @@
+\subsection *{Tabellen in der 3. Normalform}\label{3NF}
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\underline{BenutzerNr} & Benutzername & Passwort \\
+		\hline
+		1 & Christine &  12345\\
+		\hline
+		2 & ADE &  asdfg\\
+		\hline
+		3 & Hugo &  yxcvb\\
+		\hline
+	\end{tabular}
+	\caption{Die Tabelle Benutzerdaten in 3. Normalform.}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\underline{SelbstbedienungsstandNr} & Selbstbedienungsstandname \\
+		\hline
+		1 & Eierhütte \\
+		\hline
+		2 & Kartoffelhaus \\
+		\hline
+		3 & Stand1 \\
+		\hline
+	\end{tabular}
+	\caption{Die Tabelle Selbstbedienungsstand in der 3. Normalform.}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\underline{SelbstbedienungsstandNr} & \underline{BenutzerNr} & RollenNr \\
+		\hline
+		1 & 1 &  1\\
+		\hline
+		2 & 1 &  2\\
+		\hline
+		3 & 2 &  1\\
+		\hline
+		3 & 3 &  1\\
+		\hline
+	\end{tabular}
+	\caption{Die Tabelle Selbstbedienungsstand-Nutzer in der 3. Normalform.}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\underline{\underline{RollenNr}} & Benutzerrollename \\
+		\hline
+		1 & Admin  \\
+		\hline
+		2 & User \\
+		\hline
+	\end{tabular}
+	\caption{Die Tabelle Benutzerrollen in der 3. Normalform.}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\underline{WarenNr} & Warenname & EinheitNr & Preis(€)& Bemerkung \\
+		\hline
+		1 & Ei & 1 &  0,20 & \\
+		\hline
+		2 & Kartoffeln & 2 & 5 & Sorte Annabelle \\
+		\hline
+	\end{tabular}
+	\caption{Die Tabelle Waren in der 3. Normalform.}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\underline{Einheit-Nr}& Name der Einheit\\
+		\hline
+		1 & Stück\\
+		\hline
+		2 & KG \\
+		\hline
+	\end{tabular}
+	\caption{Die Tabelle Einheit in der 3. Normalform.}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\underline{WareneingangsNr} & Datum & Wareneingang(Anzahl) & WarenNr & BenutzerNr \\
+		\hline
+		1 & 25.07.2021 & +100 & 2 & 1 \\
+		\hline
+		2 & 25.07.2021  & +80 & 1 & 1 \\
+		\hline
+		3 & 26.07.2021  & +60 & 2 & 1 \\
+		\hline
+		4 & 26.07.2021  &+5 & 2 &  2\\
+		\hline
+	\end{tabular}
+	\caption{Die Tabelle Wareneingang in der 3. Normalform.}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		\underline{Datum} & \underline{WarenNr} & BenutzerNr & Gezählt & Verkauft & Einnahmen(€) \\
+		\hline
+		25.07.2021 & 1 & 1 & 231 & 251 & 50,20 \\
+		\hline
+		26.07.2021 & 1 & 1 & 52 & 239 & 47,80 \\
+		\hline
+		26.07.2021 & 2 & 1 & 3 & 2 & 10 \\
+		\hline
+	\end{tabular}
+	\caption{Die Tabelle Tagesabschluss in der 3. Normalform.} \label{3NF Tagesabschluss}
+\end{table}

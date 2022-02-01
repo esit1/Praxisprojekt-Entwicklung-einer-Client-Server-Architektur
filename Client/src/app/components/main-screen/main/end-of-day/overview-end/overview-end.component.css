@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+}
+
+
+
+.headline{
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.money{
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.hrBold{
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+

@@ -1,0 +1,172 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<br>
+<h2>Ware ändern/löschen</h2>
+<br>
+
+<!------table ------>
+
+<mat-form-field appearance="fill">
+  <mat-label>Suche</mat-label>
+  <input #input (keyup)="search($event)" matInput placeholder="suche">
+</mat-form-field>
+
+
+<div class="container mt-3">
+  <table *ngIf="searchResult" class="table table-bordered table-hover">
+    <thead class="thead-light">
+    <tr>
+      <th *ngFor="let column of header">
+        {{column}}
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr (click)="setValues(goods.goodsId)" *ngFor="let goods of searchResultList">
+      <td>{{goods.goodsId}}</td>
+      <td>{{goods.goodsName}}</td>
+      <td>{{goods.unitName}}</td>
+      <td>{{goods.goodsPrice}}</td>
+      <td>{{goods.goodsNote}}</td>
+      <div *ngIf=goods.goodsActive>
+        <td>Ja</td>
+      </div>
+      <div *ngIf=!goods.goodsActive>
+        <td>Nein</td>
+      </div>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div *ngIf="!searchResult" class="alert alert-warning" role="alert">
+  Keine Suchergebnisse.
+</div>
+<!----------table---->
+
+
+<!---------- form ---->
+<br>
+<br>
+
+<form [formGroup]="changeGoodsForm">
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label">Warenname:</label>
+    <div class="col-8">
+      <mat-select [(ngModel)]="selectedValueGoodsName" class="form-control" formControlName="goodsNameCha"
+                  name="goodsName">
+        <mat-option *ngFor="let goodsName of goodsNameList" [value]="goodsName.goodsName">
+          {{goodsName.goodsName}}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label">Einheit:</label>
+    <div class="col-8">
+      <mat-select [(ngModel)]="selectedValueUnitName" class="form-control" formControlName="unitNameCha"
+                  name="unitName">
+        <mat-option *ngFor="let unitName of unitList" [value]="unitName.unitName">
+          {{unitName.unitName}}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label" for="goodsPriceCha">Preis:</label>
+    <div class="col-8">
+      <input class="form-control" formControlName="goodsPriceCha" id="goodsPriceCha" name="goodsPrice"
+             required="required"
+             type="number"
+             value="{{goodsPrice}}">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label" for="goodsNote">Bemerkung:</label>
+    <div class="col-8">
+      <textarea class="form-control" cols="40" formControlName="goodsNoteCha" id="goodsNote" name="goodsNote" rows="5"
+                value="{{goodsNote}}"> {{goodsNote}} </textarea>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-4">Ware aktuell im Verkauf?</label>
+    <div class="col-8">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="radio" id="radio_0" type="radio" class="custom-control-input form-control" value="Aktive" formControlName="goodsAktiveCha">
+        <label for="radio_0" class="custom-control-label" >Ja</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="Inaktive" formControlName="goodsAktiveCha">
+        <label for="radio_1" class="custom-control-label">Nein</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button (click)="changeGoods()" class="btn btn-primary" name="changeGoods" type="submit">Ändern</button>
+      <button (click)="deleteGoods()" class="btn btn-primary" name="deleteGoods" type="submit">Löschen</button>
+    </div>
+  </div>
+</form>
+
+<!--<form [formGroup]="changeGoodsForm">
+  <div class="form-group row">
+    <label class="col-4 col-form-label">Warenname:</label>
+    <div class="col-8">
+      <mat-select [(ngModel)]="selectedValueGoodsName" class="form-control" formControlName="goodsNameCha"
+                  name="goodsName">
+        <mat-option *ngFor="let goodsName of goodsNameList" [value]="goodsName.goodsName">
+          {{goodsName.goodsName}}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label">Einheit:</label>
+    <div class="col-8">
+      <mat-select [(ngModel)]="selectedValueUnitName" class="form-control" formControlName="unitNameCha"
+                  name="unitName">
+        <mat-option *ngFor="let unitName of unitList" [value]="unitName.unitName">
+          {{unitName.unitName}}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label" for="goodsPriceCha">Preis:</label>
+    <div class="col-8">
+      <input class="form-control" formControlName="goodsPriceCha" id="goodsPriceCha" name="goodsPriceCha"
+             type="number" value="{{goodsPrice}} ">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label" for="goodsNote">Bemerkung:</label>
+    <div class="col-8">
+      <textarea class="form-control" cols="40" formControlName="goodsNoteCha" id="goodsNote" name="goodsNote" rows="5"
+                value="{{goodsNote}}"> {{goodsNote}} </textarea>
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button (click)="changeGoods()" class="btn btn-primary" name="changeGoods" type="submit">Ändern</button>
+      <button (click)="deleteGoods()" class="btn btn-primary" name="deleteGoods" type="submit">Löschen</button>
+
+    </div>
+  </div>
+</form>-->
+

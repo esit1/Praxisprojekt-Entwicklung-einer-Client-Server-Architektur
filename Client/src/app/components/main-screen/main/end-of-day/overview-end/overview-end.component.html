@@ -1,0 +1,43 @@
+<br>
+<h2>Übersicht Tagesabrechnung</h2>
+<br>
+
+
+  <form [formGroup]="OverviewEndForm" (mouseup)="OverviewEnd()">
+    <div class="form-group row">
+      <div class="input-group">
+        <label class="col-4 col-form-label" for="datepickerEnOv">Datum</label>
+        <input #d="ngbDatepicker" [(ngModel)]="model"
+               class="form-control" formControlName="datepickerEnOv" id="datepickerEnOv" name="datepickerEnOv" ngbDatepicker placeholder="{{todayDateString}}" value="{{todayDateString}}">
+        <div class="input-group-append" >
+          <button (click)="d.toggle()" class="btn btn-outline-secondary calendar" type="button" ><i
+            class="fa fa-calendar"></i></button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container mt-3" *ngFor="let entry of overviewEndList">
+      <div *ngIf="selectDate == entry.graduationDate">
+      <table class="table table-bordered" >
+        <thead >
+        <tr>
+          <th>{{entry.goodsName}}</th>
+          <th>Menge</th>
+          <th>Gesamt/Verkauft</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{entry.goodsUnit}}, {{entry.goodsPrice}} €</td>
+          <td>{{entry.graduationSold}}</td>
+          <td>{{entry.graduationRevenue}}</td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </form>
+
+
+

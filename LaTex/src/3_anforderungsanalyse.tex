@@ -1,0 +1,214 @@
+\section{Anforderungsanalyse}\label{anforderungsanalyse}
+
+In diesem Kapitel wird eine Anforderungsanalyse durchgeführt, Ziel ist es, die Anforderungen für die zu erstellte Anwendung zu ermitteln. 
+Zunächst muss allerdings eine kleine Problemanalyse durchgeführt werden. Diese Analyse dient dazu, das Problem näher zu erläutern.
+\\
+\\
+Unterschieden wird zwischen zwei Anforderungsarten.\cite{FunktionaleAnforderungen}.
+
+\begin{itemize}
+	\itemsep0pt
+	\item Mithilfe funktionaler Anforderungen wird festgelegt was das System tun soll. 
+	\item Nichtfunktionale Anforderungen legen fest, wie das System etwas tun soll. 
+\end{itemize}
+
+\subsection{Problemanalyse}\label{problem}
+Zuerst wird erläutert, welches Problem die Anwendung lösen soll.
+\\
+Es muss jeden Tag, an dem Ware verkauft wird, eine Abrechnung erstellt werden. Diese Anwendung soll dabei helfen, diesen Vorgang zu vereinfachen. Genauer gesagt soll die Anwendung helfen, einen Überblick über die verkaufte Ware zu erhalten. Diese soll an einem Fallbeispiel verdeutlicht werden.
+\\
+\\
+In einer Hütte werden unter anderem Eier verkauft. Am Tagesbeginn befinden sich bereits 254 Eier in der Hütte. Im Laufe des Tages werden insgesamt 480 Eier in die Hütte gebracht. Die Eier werden von unterschiedlichen Personen in unterschiedlicher Anzahl in die Hütte gestellt. Jeder dieser Personen muss immer irgendwo die genaue Stückzahl festhalten. Am Ende des Tages wird eine Abrechnung erstellt. Dazu werden die in der Hütte vorhanden Eier gezählt, dieses sind 142 Stück, anschließend wird folgende Rechnung aufgestellt.
+\\
+\\
+Anzahl der vorhandenen Eier vom Vortag + Summe der Eier aus Zugängen - Anzahl der aktuell gezählten und noch in der Hütte vorhanden Eier = Summe der theoretisch verkauften Eier. 
+\\
+\\
+254 Eier + 480 Eier - 142 Eier = 592 verkaufte Eier
+\\
+\\
+Hierbei sind Diebstähle usw. nicht berücksichtigt. Anschließend wird das Geld in der Kasse gezählt und mit der Summe verglichen, die es theoretisch sein sollte.  
+\\
+\\
+Aufwendiger wird dieser Vorgang, sobald mehr als eine Warensorte angeboten wird. Einige Erzeuger betreiben auch mehrere Selbstbedienungsstände, für jeden davon muss eine separate Abrechnung erstellt werden. 
+
+\subsection{Funktionale Anforderungen}\label{funktionale_Anforderungen}
+
+Aus der Problemstellung lassen sich folgende funktionale Anforderungen ableiten.
+\\
+\\
+Funktion: \textbf{Benutzer und Selbstbedienungsstand neu anlegen}\\
+Beschreibung: Es wird ein neuer Benutzer angelegt. Der Benutzer erhält Adminrechte. Es wird überprüft, ob der Benutzername vergeben ist, ebenso ob das Passwort den Anforderungen entspricht. Außerdem wird überprüft, ob der Name des Selbstbedienungsstandes bereits genutzt wird.
+
+
+\noindent\rule{\textwidth}{1pt}
+
+
+Funktion: \textbf{Benutzername oder Passwort ändern}\\
+Beschreibung: Der Benutzername bzw. das Passwort des Benutzers wird geändert. Es wird überprüft, ob der Benutzername bereits vergeben ist bzw. ob das Passwort den Anforderungen entspricht.
+
+
+\noindent\rule{\textwidth}{1pt}
+
+Funktion: \textbf{Benutzer löschen}\\
+Beschreibung: Der Benutzer wird gelöscht.
+
+\noindent\rule{\textwidth}{1pt}
+
+Funktion: \textbf{Mehrbenutzer}\\
+Beschreibung: Einem Selbstbedienungsstand können mehrere Benutzer zugeordnet werden. 
+
+
+\noindent\rule{\textwidth}{1pt}
+
+Funktion: \textbf{Selbstbedienungsstand anlegen}\\
+Beschreibung: Es wird ein neuer Selbstbedienungsstand angelegt. Zuvor wird überprüft, ob bereits ein Selbstbedienungsstand mit gleichen Namen existiert.
+
+
+\noindent\rule{\textwidth}{1pt}
+
+Funktion: \textbf{Selbstbedienungsstand, Name ändern}\\
+Beschreibung: Der Name des Selbstbedienungsstands wird geändert. Nur der Admin des Selbstbedienungsstandes kann diesen ändern. Es wird überprüft, ob bereits ein Selbstbedienungsstand mit diesem Namen erstellt worden ist.
+
+
+\noindent\rule{\textwidth}{1pt}
+
+
+Funktion: \textbf{Selbstbedienungsstand löschen}\\
+Beschreibung: Der Selbstbedienungsstand wird gelöscht. Nur der Admin des Selbstbedienungsstandes kann diesen löschen.
+
+
+\noindent\rule{\textwidth}{1pt}
+
+Funktion: \textbf{Selbstbedienungsstand, Benutzer hinzufügen}\\
+Beschreibung: Der Admin fügt weitere Benutzer hinzu, diese Nutzer gehören dann ebenfalls zu dem Selbstbedienungsstand. 
+
+\noindent\rule{\textwidth}{1pt}
+\\
+\\
+Funktion: \textbf{Selbstbedienungsstand, neuen Benutzer erstellen}\\
+Beschreibung: Der Admin legt einen weiteren Benutzer an, diese Nutzer gehören dann ebenfalls zu dem Selbstbedienungsstand. 
+
+
+\noindent\rule{\textwidth}{1pt}
+
+Funktion: \textbf{Ware anlegen}\\
+Beschreibung: Der Admin kann neue Ware anlegen. Folgende Wareninformationen sollen hinterlegt sein: Warenname, Einheit, Preis, Bemerkung, aktuell im Verkauf. 
+Sobald eine neue Ware angelegt wird, erhält diese automatisch den Status im Verkauf.
+
+
+\noindent\rule{\textwidth}{1pt}
+
+Funktion: \textbf{Ware löschen}\\
+Beschreibung: Der Admin kann eine Ware löschen. 
+
+
+\noindent\rule{\textwidth}{1pt}
+
+Funktion: \textbf{Warendaten ändern}\\
+Beschreibung: Ein Administrator kann die Warendaten einer Ware ändern.
+
+\noindent\rule{\textwidth}{1pt}
+
+
+Funktion: \textbf{Warenbewegung eingeben}\\
+Beschreibung: Ein Anwender kann für jede Ware den Wareneingang oder Warenabgang festhalten, und dieser wird gespeichert.
+
+\noindent\rule{\textwidth}{1pt}
+
+
+Funktion: \textbf{Tagesabschluss erstellen}\\
+Beschreibung: Es wird eine Tagesabrechnung erstellt. Aus dieser geht hervor, wie viele Waren verkauft worden sind und wie hoch die Einnahmen sind. Dabei werden Diebstahl usw. nicht berücksichtigt.
+
+
+
+\subsection{Nichtfunktionale Anforderungen}\label{nichtfunktionale_Anforderungen}
+
+Nachfolgend werden Nichtfunktionale Anforderungen vorgestellt. 
+\\
+\begin{itemize}
+		\itemsep0pt
+	\item Technische Anforderungen
+		\begin{itemize}
+		\item Das System sollte erweiterbar sein (App, Desktop-Anwendung).
+		\item Es sollte nach Möglichkeit auf jeder Plattform lauffähig sein.
+		\item Die Anwendung soll Standortunabhängig sein.
+		\item Die Anwendung sollte von möglichst vielen unterschiedlichen Geräten (z.B. Smartphone, Destop-Pc usw.) bedienbar sein. (Responsive-Webdesign)
+		\item Tagesabschluss als PDF-Dokument.
+		\end{itemize}
+	\item Sicherheit\textit{}
+		\begin{itemize}
+		\item Es soll JSON Web Token genutzt werden.
+		\item Passwort soll verschlüsselt in der Datenbank gespeichert werden.
+		\end{itemize}
+	\item Ergonomische Anforderungen
+	\begin{itemize}
+		\item Leichte Bedienbarkeit.
+		\item Übersichtliches Design.
+		\item Deutsche Textausgabe.
+	\end{itemize}
+\end{itemize}
+
+
+\subsection{Zusammenfassung der Anforderungen}\label{zusa}
+In diesem Kapitel sind nachfolgend alle Anforderungen nochmals kurz aufgezählt.
+\\
+
+\begin{table}[htbp]
+	\centering
+\begin{tabular}{|c|c|}
+		\hline
+	Nr. & Anforderung \\
+	\hline
+	1 & Benutzer und Selbstbedienungsstand neu anlegen \\
+	\hline
+	2 & Benutzername oder Passwort ändern \\
+	\hline
+	3 & Benutzer löschen \\
+	\hline
+	4 & Mehrbenutzer \\
+\hline	
+	5 & Selbstbedienungsstand anlegen \\
+	\hline
+	6 & Selbstbedienungsstand, Name ändern \\
+	\hline
+	7 & Selbstbedienungsstand löschen \\
+	\hline
+	8 & Selbstbedienungsstand, Benutzer hinzufügen \\
+	\hline
+	9 & Selbstbedienungsstand, neuen Benutzer erstellen \\
+	\hline
+	10 & Ware anlegen \\
+	\hline
+	11 &  Ware löschen\\
+	\hline
+	12 &  Warendaten ändern\\
+	\hline
+	13 & Warenbewegung eingeben \\
+	\hline
+	14 & Tagesabschluss erstellen \\
+	\hline
+	15 & JSON Web Token  \\
+	\hline
+	16 &  Verschlüsseltes Passwort in Datenbank speichern\\
+	\hline
+	17 & Erweiterbares System \\
+	\hline
+	18 &  Plattformunabhängig\\
+	\hline
+	19 &  Standortunabhängig\\
+	\hline
+	20 & Responsive-Webdesign \\
+	\hline
+	21 &  Tagesabschluss als PDF-Dokument\\
+	\hline
+	22 & Leichte Bedienbarkeit \\
+	\hline
+	23 &  Übersichtliches Design\\
+	\hline
+	24 &  Deutsche Textausgabe\\
+	\hline
+\end{tabular}
+	\caption{Zusammenfassung der Anforderungen}
+\label{tab:zu}
+\end{table}

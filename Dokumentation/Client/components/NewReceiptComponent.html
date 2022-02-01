@@ -1,0 +1,762 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  NewReceiptComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/main-screen/main/receipt/new-receipt/new-receipt.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-new-receipt</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./new-receipt.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./new-receipt.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#goodsList" >goodsList</a>
+                            </li>
+                            <li>
+                                <a href="#model" >model</a>
+                            </li>
+                            <li>
+                                <a href="#receiptForm" >receiptForm</a>
+                            </li>
+                            <li>
+                                <a href="#selectedName" >selectedName</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getListGoods" >getListGoods</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#saveEntry" >saveEntry</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(client: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, communication: <a href="../injectables/ServerCommunicationServiceService.html" target="_self">ServerCommunicationServiceService</a>, convertDate: <a href="../injectables/ConvertDateService.html" target="_self">ConvertDateService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/main-screen/main/receipt/new-receipt/new-receipt.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>client</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>communication</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ServerCommunicationServiceService.html" target="_self" >ServerCommunicationServiceService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>convertDate</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ConvertDateService.html" target="_self" >ConvertDateService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getListGoods"></a>
+                    <span class="name">
+                        <span ><b>getListGoods</b></span>
+                        <a href="#getListGoods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getListGoods()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/components/main-screen/main/receipt/new-receipt/new-receipt.component.ts:48</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/components/main-screen/main/receipt/new-receipt/new-receipt.component.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveEntry"></a>
+                    <span class="name">
+                        <span ><b>saveEntry</b></span>
+                        <a href="#saveEntry"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveEntry()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/components/main-screen/main/receipt/new-receipt/new-receipt.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goodsList"></a>
+                    <span class="name">
+                        <span ><b>goodsList</b></span>
+                        <a href="#goodsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Goods.html" target="_self" >Goods[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/main-screen/main/receipt/new-receipt/new-receipt.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="model"></a>
+                    <span class="name">
+                        <span ><b>model</b></span>
+                        <a href="#model"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>NgbDateStruct | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/main-screen/main/receipt/new-receipt/new-receipt.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="receiptForm"></a>
+                    <span class="name">
+                        <span ><b>receiptForm</b></span>
+                        <a href="#receiptForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({
+    datepickerRe: new FormControl(null, Validators.required),
+    goodsRe: new FormControl(null, Validators.required),
+    goodsPiecesRe: new FormControl(null, Validators.required),
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/main-screen/main/receipt/new-receipt/new-receipt.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedName"></a>
+                    <span class="name">
+                        <span ><b>selectedName</b></span>
+                        <a href="#selectedName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/main-screen/main/receipt/new-receipt/new-receipt.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {NgbDateStruct} from &quot;@ng-bootstrap/ng-bootstrap&quot;;
+import {HttpClient} from &quot;@angular/common/http&quot;;
+import {ServerCommunicationServiceService} from &quot;../../../../../service/server-communication.service&quot;;
+import {FormControl, FormGroup, Validators} from &quot;@angular/forms&quot;;
+import {Goods} from &quot;../../../../../interface/goods&quot;;
+import {ConvertDateService} from &quot;../../../../../service/convert-date.service&quot;;
+
+
+@Component({
+  selector: &#x27;app-new-receipt&#x27;,
+  templateUrl: &#x27;./new-receipt.component.html&#x27;,
+  styleUrls: [&#x27;./new-receipt.component.css&#x27;]
+})
+/**
+ * With the help of this class, we added a new incoming and outgoing goods department.
+ */
+export class NewReceiptComponent implements OnInit {
+
+  //Calendar model.
+  model: NgbDateStruct | undefined;
+
+  //Selected product name.
+  selectedName: string | null | undefined;
+
+  //empty list the goods are stored in this list.
+  goodsList: Goods[] &#x3D; [];
+
+  //The form receiptForm is defined.
+  receiptForm &#x3D; new FormGroup({
+    datepickerRe: new FormControl(null, Validators.required),
+    goodsRe: new FormControl(null, Validators.required),
+    goodsPiecesRe: new FormControl(null, Validators.required),
+  });
+
+  constructor(private client: HttpClient,
+              private communication: ServerCommunicationServiceService,
+              private convertDate : ConvertDateService
+  ) {
+  }
+
+  ngOnInit() {
+    //Loads list of goods
+    this.getListGoods();
+  }
+
+//Get List with goods
+  getListGoods() {
+
+    //set url
+    let url &#x3D; &#x27;goods/&#x27; + localStorage.getItem(&#x27;key_selfServiceStand_name&#x27;);
+
+    //communication Server
+    this.communication
+      .serverCommunication(url, &#x27;&#x27;, &#x27;get&#x27;, true)
+      .subscribe((response: any) &#x3D;&gt; {
+
+          //save entry in list
+          for (var entry of response) {
+            this.goodsList.push({
+              goodsId: entry.goodsId,
+              goodsName: entry.goodsNameNr.goodsName,
+              unitName: entry.goodsUnitNr.unitName,
+              goodsPrice: entry.goodsPrice,
+              goodsNote: entry.goodsNote,
+              goodsActive:entry.goodsActive,
+            });
+          }
+        }, error &#x3D;&gt; {
+          console.log(error);
+        }
+      );
+  }
+
+  //Sends a request to the server with the data, incoming and outgoing goods
+  saveEntry() {
+
+    let convertDateString: String &#x3D; this.convertDate.convertDate(this.receiptForm.value.datepickerRe.year, this.receiptForm.value.datepickerRe.month, this.receiptForm.value.datepickerRe.day);
+
+    //set url
+    let url &#x3D; &#x27;receipt/&#x27;;
+    let data &#x3D; {
+      receiptDate: convertDateString,
+      goodsPieces: this.receiptForm.value.goodsPiecesRe,
+      goodsID: this.receiptForm.value.goodsRe,
+      selfServiceStandName: localStorage.getItem(&#x27;key_selfServiceStand_name&#x27;),
+      userName: localStorage.getItem(&#x27;key_user_name&#x27;),
+    };
+
+    //communication Server
+    this.communication
+      .serverCommunication(url, data, &#x27;post&#x27;, false)
+      .subscribe((response: any) &#x3D;&gt; {
+
+        console.log(response);
+        alert(&#x27;Meldung gespeichert&#x27;);
+
+        }, error &#x3D;&gt; {
+
+          console.log(error);
+        alert(&#x27;Eingabefehler, Daten nochmals überprüfen&#x27;);
+
+        }
+      );
+
+    //Resets the form field
+    this.receiptForm.controls[&#x27;goodsPiecesRe&#x27;].reset();
+    this.receiptForm.controls[&#x27;goodsRe&#x27;].reset();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;link href&#x3D;&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+&lt;link href&#x3D;&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+
+&lt;br&gt;
+
+&lt;h2&gt;Eingabe der Warenbewegungen (Zugang/Abgang)&lt;/h2&gt;
+
+&lt;form (ngSubmit)&#x3D;&#x27;saveEntry()&#x27; [formGroup]&#x3D;&quot;receiptForm&quot;&gt;
+
+  &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+    &lt;div class&#x3D;&quot;input-group&quot;&gt;
+      &lt;label class&#x3D;&quot;col-4 col-form-label&quot; for&#x3D;&quot;datepickerRe&quot;&gt;Datum&lt;/label&gt;
+      &lt;input #d&#x3D;&quot;ngbDatepicker&quot; [(ngModel)]&#x3D;&quot;model&quot;
+             class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;datepickerRe&quot; id&#x3D;&quot;datepickerRe&quot; name&#x3D;&quot;datepickerRe&quot; ngbDatepicker placeholder&#x3D;&quot;yyyy-mm-dd&quot;&gt;
+      &lt;div class&#x3D;&quot;input-group-append&quot;&gt;
+        &lt;button (click)&#x3D;&quot;d.toggle()&quot; class&#x3D;&quot;btn btn-outline-secondary calendar&quot; type&#x3D;&quot;button&quot;&gt;&lt;i
+          class&#x3D;&quot;fa fa-calendar&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+    &lt;label class&#x3D;&quot;col-4 col-form-label&quot; for&#x3D;&quot;goodsRe&quot;&gt;Ware&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col-8&quot;&gt;
+      &lt;mat-select  [(ngModel)]&#x3D;&quot;selectedName&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;goodsRe&quot; id&#x3D;&quot;goodsRe&quot; name&#x3D;&quot;goodsRe&quot;&gt;
+      &lt;mat-option *ngFor&#x3D;&quot;let goods of goodsList&quot; [value]&#x3D;&quot;goods.goodsId&quot; &gt;
+        {{goods.goodsName}}, {{goods.unitName}}, {{goods.goodsPrice}} €, {{goods.goodsNote}}
+      &lt;/mat-option&gt;
+      &lt;/mat-select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+    &lt;label class&#x3D;&quot;col-4 col-form-label&quot; for&#x3D;&quot;goodsPiecesRe&quot;&gt;Anzahl der Waren&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col-8&quot;&gt;
+      &lt;input class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;goodsPiecesRe&quot; id&#x3D;&quot;goodsPiecesRe&quot; name&#x3D;&quot;goodsPiecesRe&quot; placeholder&#x3D;&quot;Anzahl der Waren&quot; type&#x3D;&quot;number&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+    &lt;div class&#x3D;&quot;offset-4 col-8&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn-primary&quot; name&#x3D;&quot;submit&quot; type&#x3D;&quot;submit&quot;&gt;Speichern&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./new-receipt.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><br><h2>Eingabe der Warenbewegungen (Zugang/Abgang)</h2><form (ngSubmit)=\'saveEntry()\' [formGroup]="receiptForm">  <div class="form-group row">    <div class="input-group">      <label class="col-4 col-form-label" for="datepickerRe">Datum</label>      <input #d="ngbDatepicker" [(ngModel)]="model"             class="form-control" formControlName="datepickerRe" id="datepickerRe" name="datepickerRe" ngbDatepicker placeholder="yyyy-mm-dd">      <div class="input-group-append">        <button (click)="d.toggle()" class="btn btn-outline-secondary calendar" type="button"><i          class="fa fa-calendar"></i></button>      </div>    </div>  </div>  <div class="form-group row">    <label class="col-4 col-form-label" for="goodsRe">Ware</label>    <div class="col-8">      <mat-select  [(ngModel)]="selectedName" class="form-control" formControlName="goodsRe" id="goodsRe" name="goodsRe">      <mat-option *ngFor="let goods of goodsList" [value]="goods.goodsId" >        {{goods.goodsName}}, {{goods.unitName}}, {{goods.goodsPrice}} €, {{goods.goodsNote}}      </mat-option>      </mat-select>    </div>  </div>  <div class="form-group row">    <label class="col-4 col-form-label" for="goodsPiecesRe">Anzahl der Waren</label>    <div class="col-8">      <input class="form-control" formControlName="goodsPiecesRe" id="goodsPiecesRe" name="goodsPiecesRe" placeholder="Anzahl der Waren" type="number">    </div>  </div>  <div class="form-group row">    <div class="offset-4 col-8">      <button class="btn btn-primary" name="submit" type="submit">Speichern</button>    </div>  </div></form></div>'
+    var COMPONENTS = [{'name': 'AddUserSelfComponent', 'selector': 'app-add-user-self'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChangeGoodsComponent', 'selector': 'app-change-goods'},{'name': 'ChangeSelfComponent', 'selector': 'app-change-self'},{'name': 'ChangeUserComponent', 'selector': 'app-change-user'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CreateUserComponent', 'selector': 'app-create-user'},{'name': 'DataProtectionComponent', 'selector': 'app-data-protection'},{'name': 'EndOfDayComponent', 'selector': 'app-end-of-day'},{'name': 'EndOfDayPdfComponent', 'selector': 'app-end-of-day-pdf'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'GoodsComponent', 'selector': 'app-goods'},{'name': 'ImprintComponent', 'selector': 'app-imprint'},{'name': 'LoginAndRegistrationComponent', 'selector': 'app-login-and-registration'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MainScreenComponent', 'selector': 'app-main-screen'},{'name': 'MonthComponent', 'selector': 'app-month'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NewEndComponent', 'selector': 'app-new-end'},{'name': 'NewGoodsComponent', 'selector': 'app-new-goods'},{'name': 'NewReceiptComponent', 'selector': 'app-new-receipt'},{'name': 'OverviewEndComponent', 'selector': 'app-overview-end'},{'name': 'OverviewGoodsComponent', 'selector': 'app-overview-goods'},{'name': 'OverviewReceiptComponent', 'selector': 'app-overview-receipt'},{'name': 'OverviewSelfComponent', 'selector': 'app-overview-self'},{'name': 'OverviewUserComponent', 'selector': 'app-overview-user'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PasswordResetComponent', 'selector': 'app-password-reset'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'SelectionSelfServiceStandComponent', 'selector': 'app-selection-self-service-stand'},{'name': 'SelfServiceStandComponent', 'selector': 'app-self-service-stand'},{'name': 'SettingsGoodsComponent', 'selector': 'app-settings-goods'},{'name': 'StatisticsComponent', 'selector': 'app-statistics'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'YearComponent', 'selector': 'app-year'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NewReceiptComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NewReceiptComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

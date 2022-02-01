@@ -1,0 +1,55 @@
+
+a:link {
+  font-family: Verdana, Arial;
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+}
+
+a:active {
+  font-family: Verdana, Arial;
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+}
+
+a:visited {
+  font-family: Verdana, Arial;
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+}
+
+a:hover {
+  font-family: Verdana, Arial;
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+}
+
+.main-menu {
+  background: var(--colorGray);
+}
+
+.link-menu {
+  display: inline-block;
+  background-color: var(--colorBackground1);
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 16px;
+  padding: 30px;
+  width: 250px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.link-menu:hover {
+  background: var(--colorGray);
+  font: var(--colorGray)
+}

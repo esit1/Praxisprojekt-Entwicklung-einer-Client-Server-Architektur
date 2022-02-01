@@ -1,0 +1,56 @@
+.navbar {
+  width: 100%;
+}
+
+a:link {
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+}
+
+a:active {
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+  text-underline: none;
+  background: var(--colorGray);
+  font: var(--colorGray)
+}
+
+.main-menu {
+  background: var(--colorGray);
+}
+
+.button-navbar {
+  background-color: var(--colorBackground1);
+  color: white;
+  border: thin solid white;
+  border-radius: 0 .4em .4em;
+  text-shadow: 0 -.05em .05em #333;
+}
+
+.mat-menu-item {
+  background-color: var(--colorBackground1);
+  color: white;
+  border: thin solid white;
+  border-radius: 0 .4em .4em;
+  text-shadow: 0 -.05em .05em #333;
+}
+
+.mat-menu-item:hover {
+  text-decoration: none;
+  text-underline: none;
+  background: var(--colorGray);
+  font: var(--colorGray)
+}

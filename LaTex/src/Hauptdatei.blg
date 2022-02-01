@@ -1,0 +1,238 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Hauptdatei.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: alphadin.bst
+White space in argument---line 91 of file Hauptdatei.aux
+ : \citation{S.8
+ :               ff}
+I'm skipping whatever remains of this command
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: Hauptdatei.bib
+Warning--entry type for "Lub17" isn't style-file defined
+--line 54 of file Hauptdatei.bib
+Warning--entry type for "w3SQL" isn't style-file defined
+--line 63 of file Hauptdatei.bib
+Warning--entry type for "horn" isn't style-file defined
+--line 72 of file Hauptdatei.bib
+Warning--entry type for "datenbankenVerstehen" isn't style-file defined
+--line 82 of file Hauptdatei.bib
+Warning--entry type for "bitfarm" isn't style-file defined
+--line 90 of file Hauptdatei.bib
+Warning--entry type for "t3rationaleDatenbank" isn't style-file defined
+--line 98 of file Hauptdatei.bib
+Warning--entry type for "relaDatenbank" isn't style-file defined
+--line 108 of file Hauptdatei.bib
+Warning--entry type for "clientServerModel" isn't style-file defined
+--line 119 of file Hauptdatei.bib
+Warning--entry type for "RESTAPI" isn't style-file defined
+--line 139 of file Hauptdatei.bib
+Warning--entry type for "RESTAPI2" isn't style-file defined
+--line 149 of file Hauptdatei.bib
+Warning--entry type for "RESTAPI3" isn't style-file defined
+--line 159 of file Hauptdatei.bib
+Warning--entry type for "Framework1" isn't style-file defined
+--line 176 of file Hauptdatei.bib
+Warning--entry type for "Framework2" isn't style-file defined
+--line 183 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich" isn't style-file defined
+--line 191 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich2" isn't style-file defined
+--line 200 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich3" isn't style-file defined
+--line 210 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich4" isn't style-file defined
+--line 220 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich5" isn't style-file defined
+--line 229 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich6" isn't style-file defined
+--line 237 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich7" isn't style-file defined
+--line 247 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich8" isn't style-file defined
+--line 257 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich9" isn't style-file defined
+--line 267 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich10" isn't style-file defined
+--line 277 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich11" isn't style-file defined
+--line 287 of file Hauptdatei.bib
+Warning--entry type for "AngularReactVergleich12" isn't style-file defined
+--line 297 of file Hauptdatei.bib
+Warning--entry type for "Single-Page-Webanwendung" isn't style-file defined
+--line 307 of file Hauptdatei.bib
+Warning--entry type for "Spring1" isn't style-file defined
+--line 317 of file Hauptdatei.bib
+Warning--entry type for "Spring2" isn't style-file defined
+--line 326 of file Hauptdatei.bib
+Warning--entry type for "Spring3" isn't style-file defined
+--line 336 of file Hauptdatei.bib
+Warning--entry type for "Umfrage" isn't style-file defined
+--line 346 of file Hauptdatei.bib
+Warning--entry type for "Regional" isn't style-file defined
+--line 356 of file Hauptdatei.bib
+Warning--entry type for "Selbstbedienung" isn't style-file defined
+--line 366 of file Hauptdatei.bib
+Warning--entry type for "Kartoffelkiste" isn't style-file defined
+--line 373 of file Hauptdatei.bib
+Warning--entry type for "Bundesministerium" isn't style-file defined
+--line 383 of file Hauptdatei.bib
+Warning--entry type for "gesetze1" isn't style-file defined
+--line 394 of file Hauptdatei.bib
+Warning--entry type for "gesetze2" isn't style-file defined
+--line 404 of file Hauptdatei.bib
+Warning--entry type for "gesetze4" isn't style-file defined
+--line 423 of file Hauptdatei.bib
+Warning--entry type for "gesetze5" isn't style-file defined
+--line 433 of file Hauptdatei.bib
+Warning--entry type for "gesetze6" isn't style-file defined
+--line 441 of file Hauptdatei.bib
+Warning--entry type for "gesetze7" isn't style-file defined
+--line 449 of file Hauptdatei.bib
+Warning--entry type for "FunktionaleAnforderungen" isn't style-file defined
+--line 457 of file Hauptdatei.bib
+Warning--entry type for "DBREdun" isn't style-file defined
+--line 475 of file Hauptdatei.bib
+Warning--entry type for "DB2" isn't style-file defined
+--line 485 of file Hauptdatei.bib
+Warning--entry type for "DB3" isn't style-file defined
+--line 495 of file Hauptdatei.bib
+Warning--entry type for "DB4" isn't style-file defined
+--line 503 of file Hauptdatei.bib
+Warning--entry type for "DB5" isn't style-file defined
+--line 511 of file Hauptdatei.bib
+Warning--entry type for "Server1" isn't style-file defined
+--line 521 of file Hauptdatei.bib
+Warning--entry type for "Server2" isn't style-file defined
+--line 529 of file Hauptdatei.bib
+Warning--entry type for "JPA" isn't style-file defined
+--line 536 of file Hauptdatei.bib
+Warning--entry type for "mapping" isn't style-file defined
+--line 545 of file Hauptdatei.bib
+Warning--entry type for "spring" isn't style-file defined
+--line 554 of file Hauptdatei.bib
+Warning--entry type for "Dependency" isn't style-file defined
+--line 563 of file Hauptdatei.bib
+Warning--entry type for "gui" isn't style-file defined
+--line 572 of file Hauptdatei.bib
+Warning--entry type for "token" isn't style-file defined
+--line 581 of file Hauptdatei.bib
+Warning--entry type for "umfrage2" isn't style-file defined
+--line 590 of file Hauptdatei.bib
+Warning--entry type for "Insel" isn't style-file defined
+--line 599 of file Hauptdatei.bib
+Warning--entry type for "Ang" isn't style-file defined
+--line 608 of file Hauptdatei.bib
+Warning--entry type for "direkt2" isn't style-file defined
+--line 614 of file Hauptdatei.bib
+Warning--entry type for "Statuscodes" isn't style-file defined
+--line 624 of file Hauptdatei.bib
+Warning--entry type for "db2222" isn't style-file defined
+--line 633 of file Hauptdatei.bib
+Warning--to sort, need author or key in umfrage2
+Warning--to sort, need author or key in Ang
+Warning--to sort, need author or key in Umfrage
+Warning--to sort, need author or key in direkt2
+Warning--to sort, need author or key in Regional
+Warning--to sort, need author or key in Kartoffelkiste
+Warning--to sort, need author or key in Selbstbedienung
+Warning--to sort, need author or key in gesetze1
+Warning--to sort, need author or key in gesetze4
+Warning--to sort, need author or key in gesetze2
+Warning--to sort, need author, editor, or key in gesetze3
+Warning--to sort, need author or key in gesetze5
+Warning--to sort, need author or key in gesetze6
+Warning--to sort, need author or key in Bundesministerium
+Warning--to sort, need author or key in gesetze7
+Warning--to sort, need author or key in clientServerModel
+Warning--to sort, need author or key in RESTAPI
+Warning--to sort, need author or key in RESTAPI2
+Warning--to sort, need author or key in RESTAPI3
+Warning--to sort, need author or key in Statuscodes
+Warning--to sort, need author or key in Framework1
+Warning--to sort, need author or key in Framework2
+Warning--to sort, need author or key in AngularReactVergleich12
+Warning--to sort, need author or key in Single-Page-Webanwendung
+Warning--to sort, need author or key in AngularReactVergleich
+Warning--to sort, need author or key in AngularReactVergleich5
+Warning--to sort, need author or key in AngularReactVergleich2
+Warning--to sort, need author or key in AngularReactVergleich3
+Warning--to sort, need author or key in AngularReactVergleich4
+Warning--to sort, need author or key in AngularReactVergleich6
+Warning--to sort, need author or key in AngularReactVergleich7
+Warning--to sort, need author or key in AngularReactVergleich8
+Warning--to sort, need author or key in AngularReactVergleich9
+Warning--to sort, need author or key in AngularReactVergleich10
+Warning--to sort, need author or key in AngularReactVergleich11
+Warning--to sort, need author or key in Spring2
+Warning--to sort, need author or key in Spring1
+Warning--to sort, need author or key in Spring3
+Warning--to sort, need author or key in t3rationaleDatenbank
+Warning--to sort, need author or key in db2222
+Warning--to sort, need author or key in datenbankenVerstehen
+Warning--to sort, need author or key in bitfarm
+Warning--to sort, need author or key in FunktionaleAnforderungen
+Warning--to sort, need author or key in Server1
+Warning--to sort, need author or key in Server2
+Warning--to sort, need author or key in DBREdun
+Warning--to sort, need author or key in DB2
+Warning--to sort, need author or key in relaDatenbank
+Warning--to sort, need author or key in DB3
+Warning--to sort, need author or key in DB4
+Warning--to sort, need author or key in gui
+Warning--to sort, need author or key in token
+Warning--to sort, need author or key in DB5
+Warning--to sort, need author or key in JPA
+Warning--to sort, need author or key in mapping
+Warning--to sort, need author or key in spring
+Warning--to sort, need author or key in Dependency
+Warning--empty author and editor in gesetze3
+Warning--empty author and editor in gesetze3
+Warning--neither address nor publication date in oracleDB
+You've used 64 entries,
+            4793 wiz_defined-function locations,
+            1210 strings with 16047 characters,
+and the built_in function-call counts, 19230 in all, are:
+= -- 1969
+> -- 113
+< -- 63
++ -- 79
+- -- 14
+* -- 1049
+:= -- 2423
+add.period$ -- 112
+call.type$ -- 64
+change.case$ -- 199
+chr.to.int$ -- 50
+cite$ -- 181
+duplicate$ -- 837
+empty$ -- 2189
+format.name$ -- 42
+if$ -- 4789
+int.to.chr$ -- 15
+int.to.str$ -- 0
+missing$ -- 374
+newline$ -- 379
+num.names$ -- 21
+pop$ -- 322
+preamble$ -- 1
+purify$ -- 327
+quote$ -- 0
+skip$ -- 1065
+stack$ -- 0
+substring$ -- 876
+swap$ -- 72
+text.length$ -- 14
+text.prefix$ -- 7
+top$ -- 0
+type$ -- 626
+warning$ -- 60
+while$ -- 21
+width$ -- 67
+write$ -- 810
+(There was 1 error message)

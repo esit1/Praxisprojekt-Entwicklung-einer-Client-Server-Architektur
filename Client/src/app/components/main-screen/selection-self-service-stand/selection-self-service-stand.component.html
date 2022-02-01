@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<form>
+  <mat-form-field appearance="fill">
+    <mat-label>Selbstbedienungsstand</mat-label>
+    <mat-select (selectionChange)="select() " [(ngModel)]="selectedValue" name="selfServiceStand">
+      <mat-option *ngFor="let selfServiceStand of selfServiceStandList" [value]="selfServiceStand.name">
+        {{selfServiceStand.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</form>
+
+

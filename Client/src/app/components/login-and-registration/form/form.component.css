@@ -1,0 +1,29 @@
+li:hover {
+  background-color: #148014;
+}
+
+.nav-link {
+  background: var(--colorGray);
+  color: white;
+}
+
+.nav-tabs {
+  background-color: transparent;
+}
+
+.tab-content {
+  background: white;
+  border-bottom: 6px solid white;
+  border-right: 12px solid white;
+  border-left: 12px solid white;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+
+
+
+
+
+
+

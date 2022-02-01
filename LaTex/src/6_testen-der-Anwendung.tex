@@ -1,0 +1,77 @@
+\section{Testen der Anwendung}\label{testen_der_Anwendung}
+
+Zum Abschluss folgt eine Tabelle, aus dieser ist zu entnehmen, welche der definierten Anforderungen aus Kapitel \ref{anforderungsanalyse}
+erfüllt oder teilweise erfüllt sind. 
+\\
+\begin{table}[htbp]
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+		Nr. & Anforderung & Erfüllt &Teilweise &Nicht  & Uner-\\
+		 &  &  &erfüllt & erfüllt & füllbar\\
+		\hline
+		1 & Benutzer und Selbstbedienungsstand neu anlegen & X & & &  \\
+		\hline
+		2 & Benutzername oder Passwort ändern &  & X* &  &\\
+		\hline
+		3 & Benutzer löschen &  & X*  & & \\
+		\hline
+		4 & Mehrbenutzer &  & X*  &  &\\
+		\hline	
+		5 & Selbstbedienungsstand anlegen &  & X* & & \\
+		\hline
+		6 & Selbstbedienungsstand, Name ändern &  & X*  &  &\\
+		\hline
+		7 & Selbstbedienungsstand löschen &  & X* & & \\
+		\hline
+		8 & Selbstbedienungsstand, Benutzer hinzufügen &  & X* & & \\
+		\hline
+		9 & Selbstbedienungsstand, neuen Benutzer erstellen &  & X*  & & \\
+		\hline
+		10 & Ware anlegen & X &  & & \\
+		\hline
+		11 &  Ware löschen & X &  & & \\
+		\hline
+		12 &  Warendaten ändern & X &  & & \\
+		\hline
+		13 & Warenbewegung eingeben & X &  &  &\\
+		\hline
+		14 & Tagesabschluss erstellen & X &  &  &\\
+		\hline
+		15 & JSON Web Token  & X &  & & \\
+		\hline
+		16 &  Verschlüsseltes Passwort in Datenbank speichern & X &  & & \\
+		\hline
+		17 & Erweiterbares System & X &  & & \\
+		\hline
+		18 &  Plattformunabhängig & X &  &  & \\
+		\hline
+		19 &  Standortunabhängig &  & X & & \\
+		\hline
+		20 & Responsive-Webdesign &  & X &  & \\
+		\hline
+		21 &  Tagesabschluss als PDF-Dokument & X &  & & \\
+		\hline
+		22 & Leichte Bedienbarkeit &  & X & & \\
+		\hline
+		23 &  Übersichtliches Design &  & X &  &\\
+		\hline
+		24 &  Deutsche Textausgabe & X  &  & & \\
+		\hline
+	\end{tabular}
+	X* Funktion ist bereits auf dem Server implementiert.
+	\caption{Überprüfung der Anforderungen}
+	\label{tab:zu2}
+\end{table}
+
+Die Tabelle \ref{tab:zu2} listet nochmals die Anforderungen auf. In einigen Spalten X* zu sehen (Zeilen 2 bis 9), diese beutetet das die Funktion bereits auf dem Server implementiert worden sind. 
+\\ Nach Fertigstellung der Funktion auf dem Server wurden diese getestet. Getestet wurde mit dem Programm Postman.\footnote{https://www.postman.com}. Damit ist es möglich unterschiedliche HTTP-Anfragen durchzuführen.
+\\
+\\
+\newpage
+Die Anforderung Nr. 19 kann nue Teilweise erfüllt werden, da für die nutzung der Anwendung ein Internetzugang erforderlich ist. Abhilfe könnte eine App schaffen, die die Daten lokal speichert und sobald Internetempfang vorhanden ist diese überträgt.
+\\
+\\
+Die Anforderung Nr. 20 Responsive-Webdesign wurde nur teilweise erfüllt, die Navigationsleiste erinnert an klassische Desktopanwendungen. Ein Hamburger-Menü ist hingegen besser bedienbar von mobilen Endgeräten. 
+\\
+\\
+Die Anforderungen 22 und 23 lassen sich schwer überprüfen, da dieses jeder Benutzer anderes wahrnimmt. Dieses lässt sich am besten in einem Praxistest mit unterschiedlichen Anwendern überprüfen. 

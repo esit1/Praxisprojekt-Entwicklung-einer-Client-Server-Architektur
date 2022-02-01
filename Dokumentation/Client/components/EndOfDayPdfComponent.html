@@ -1,0 +1,998 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  EndOfDayPdfComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Class provides a pdf document of the chosen daily closing</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-end-of-day-pdf</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./end-of-day-pdf.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./end-of-day-pdf.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#htmlData" >htmlData</a>
+                            </li>
+                            <li>
+                                <a href="#model" >model</a>
+                            </li>
+                            <li>
+                                <a href="#OverviewEndForm" >OverviewEndForm</a>
+                            </li>
+                            <li>
+                                <a href="#overviewEndList" >overviewEndList</a>
+                            </li>
+                            <li>
+                                <a href="#selectDate" >selectDate</a>
+                            </li>
+                            <li>
+                                <a href="#todayDate" >todayDate</a>
+                            </li>
+                            <li>
+                                <a href="#todayDateString" >todayDateString</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getListWithEndOfTheEntry" >getListWithEndOfTheEntry</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#openPDF" >openPDF</a>
+                            </li>
+                            <li>
+                                <a href="#OverviewEnd" >OverviewEnd</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(client: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, communication: <a href="../injectables/ServerCommunicationServiceService.html" target="_self">ServerCommunicationServiceService</a>, convertDate: <a href="../injectables/ConvertDateService.html" target="_self">ConvertDateService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>client</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>communication</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ServerCommunicationServiceService.html" target="_self" >ServerCommunicationServiceService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>convertDate</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ConvertDateService.html" target="_self" >ConvertDateService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getListWithEndOfTheEntry"></a>
+                    <span class="name">
+                        <span ><b>getListWithEndOfTheEntry</b></span>
+                        <a href="#getListWithEndOfTheEntry"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getListWithEndOfTheEntry()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openPDF"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>openPDF</b></span>
+                        <a href="#openPDF"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openPDF()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:91</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OverviewEnd"></a>
+                    <span class="name">
+                        <span ><b>OverviewEnd</b></span>
+                        <a href="#OverviewEnd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>OverviewEnd()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="htmlData"></a>
+                    <span class="name">
+                        <span ><b>htmlData</b></span>
+                        <a href="#htmlData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef | undefined</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;htmlData&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="model"></a>
+                    <span class="name">
+                        <span ><b>model</b></span>
+                        <a href="#model"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>NgbDateStruct | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OverviewEndForm"></a>
+                    <span class="name">
+                        <span ><b>OverviewEndForm</b></span>
+                        <a href="#OverviewEndForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({
+    datepickerEnOv: new FormControl(null, Validators.required),
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="overviewEndList"></a>
+                    <span class="name">
+                        <span ><b>overviewEndList</b></span>
+                        <a href="#overviewEndList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/EndOfTheDayOverview.html" target="_self" >EndOfTheDayOverview[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectDate"></a>
+                    <span class="name">
+                        <span ><b>selectDate</b></span>
+                        <a href="#selectDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="todayDate"></a>
+                    <span class="name">
+                        <span ><b>todayDate</b></span>
+                        <a href="#todayDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="todayDateString"></a>
+                    <span class="name">
+                        <span ><b>todayDateString</b></span>
+                        <a href="#todayDateString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>String | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/main-screen/main/end-of-day/end-of-day-pdf/end-of-day-pdf.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, ElementRef, OnInit, ViewChild} from &#x27;@angular/core&#x27;;
+import {NgbDateStruct} from &quot;@ng-bootstrap/ng-bootstrap&quot;;
+import {EndOfTheDayOverview} from &quot;../../../../../interface/end-of-the-day-overwiew&quot;;
+import {FormControl, FormGroup, Validators} from &quot;@angular/forms&quot;;
+import {HttpClient} from &quot;@angular/common/http&quot;;
+import {ServerCommunicationServiceService} from &quot;../../../../../service/server-communication.service&quot;;
+import {ConvertDateService} from &quot;../../../../../service/convert-date.service&quot;;
+import html2canvas from &quot;html2canvas&quot;;
+import jsPDF from &quot;jspdf&quot;;
+
+/**
+ * Class provides a pdf document of the chosen daily closing
+ */
+@Component({
+  selector: &#x27;app-end-of-day-pdf&#x27;,
+  templateUrl: &#x27;./end-of-day-pdf.component.html&#x27;,
+  styleUrls: [&#x27;./end-of-day-pdf.component.css&#x27;]
+})
+export class EndOfDayPdfComponent implements OnInit {
+
+  //datepicker
+  model: NgbDateStruct | undefined;
+
+  //List contains a list of daily closings
+  overviewEndList: EndOfTheDayOverview[] &#x3D; [];
+
+  //The date selected by the user
+  selectDate: String &#x3D; &#x27;&#x27;;
+
+  //Today&#x27;s date
+  todayDate: any;
+
+ //Today&#x27;s date as a string
+  todayDateString: String | undefined;
+
+  //For the pfd creation
+  @ViewChild(&#x27;htmlData&#x27;) htmlData: ElementRef | undefined;
+
+  OverviewEndForm &#x3D; new FormGroup({
+    datepickerEnOv: new FormControl(null, Validators.required),
+  });
+
+  constructor(private client: HttpClient,
+              private communication: ServerCommunicationServiceService,
+              private convertDate: ConvertDateService
+  ) {
+  }
+
+  //First loads the date. Then the date is converted. Finally, a list of daily closings is loaded.
+  ngOnInit(): void {
+    this.todayDate &#x3D; new Date;
+    this.todayDateString &#x3D; this.convertDate.convertDate(this.todayDate.getFullYear(), this.todayDate.getUTCMonth() + 1, this.todayDate.getDate());
+    this.getListWithEndOfTheEntry();
+  }
+
+//Converts a date after it is triggered
+  OverviewEnd() {
+    this.selectDate &#x3D; this.convertDate.convertDate(this.OverviewEndForm.value.datepickerEnOv.year, this.OverviewEndForm.value.datepickerEnOv.month, this.OverviewEndForm.value.datepickerEnOv.day);
+  }
+
+//Loads a list with all end of the day entries
+  getListWithEndOfTheEntry() {
+
+    //set url
+    let url &#x3D; &#x27;endOfDay/&#x27; + localStorage.getItem(&#x27;key_selfServiceStand_name&#x27;);
+
+    //communication Server
+    this.communication
+      .serverCommunication(url, &#x27;&#x27;, &#x27;get&#x27;, true)
+      .subscribe((response: any) &#x3D;&gt; {
+
+          //save entry in list
+          for (var entry of response) {
+            this.overviewEndList.push({
+              goodsName: entry.goodsName,
+              goodsUnit: entry.goodsUnit,
+              graduationCount: entry.graduationCount,
+              graduationDate: entry.graduationDate,
+              graduationRevenue: entry.graduationRevenue,
+              graduationSold: entry.graduationSold,
+              goodsPrice: entry.goodsPrice,
+            });
+          }
+        }, error &#x3D;&gt; {
+          console.log(error);
+        }
+      );
+  }
+
+  //create pdf
+  public openPDF():void {
+
+    //Loads all data in the tag htmlConvert
+    let DATA &#x3D; document.getElementById(&#x27;htmlConvert&#x27;);
+
+    //If the variable DATA contains data, the function is excluded.
+    if (DATA) {
+      html2canvas(DATA).then(canvas &#x3D;&gt; {
+
+        let fileWidth &#x3D; 148;
+        let fileHeight &#x3D; canvas.height * fileWidth / canvas.width;
+
+        const FILEURI &#x3D; canvas.toDataURL(&#x27;image/png&#x27;)
+        let PDF &#x3D; new jsPDF(&#x27;p&#x27;, &#x27;mm&#x27;, &#x27;a4&#x27;);
+        let position &#x3D; 40;
+        PDF.addImage(FILEURI, &#x27;PNG&#x27;, 10, position, fileWidth, fileHeight)
+
+        PDF.save(&#x27;sbs&#x27;+this.todayDateString);
+      });
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;br&gt;
+&lt;h2&gt;Übersicht Tagesabrechnung&lt;/h2&gt;
+&lt;br&gt;
+
+
+&lt;form [formGroup]&#x3D;&quot;OverviewEndForm&quot; (mouseup)&#x3D;&quot;OverviewEnd()&quot;&gt;
+  &lt;div class&#x3D;&quot;form-group row&quot;&gt;
+    &lt;div class&#x3D;&quot;input-group&quot;&gt;
+      &lt;label class&#x3D;&quot;col-4 col-form-label&quot; for&#x3D;&quot;datepickerEnOv&quot;&gt;Datum&lt;/label&gt;
+      &lt;input #d&#x3D;&quot;ngbDatepicker&quot; [(ngModel)]&#x3D;&quot;model&quot;
+             class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;datepickerEnOv&quot; id&#x3D;&quot;datepickerEnOv&quot; name&#x3D;&quot;datepickerEnOv&quot; ngbDatepicker placeholder&#x3D;&quot;{{todayDateString}}&quot; value&#x3D;&quot;{{todayDateString}}&quot;&gt;
+      &lt;div class&#x3D;&quot;input-group-append&quot; &gt;
+        &lt;button (click)&#x3D;&quot;d.toggle()&quot; class&#x3D;&quot;btn btn-outline-secondary calendar&quot; type&#x3D;&quot;button&quot; &gt;&lt;i
+          class&#x3D;&quot;fa fa-calendar&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+  &lt;div class&#x3D;&quot;container mt-3&quot; *ngFor&#x3D;&quot;let entry of overviewEndList&quot;&gt;
+    &lt;div *ngIf&#x3D;&quot;selectDate &#x3D;&#x3D; entry.graduationDate&quot;&gt;
+      &lt;table class&#x3D;&quot;table table-bordered&quot; &gt;
+        &lt;thead &gt;
+        &lt;tr&gt;
+          &lt;th&gt;{{entry.goodsName}}&lt;/th&gt;
+          &lt;th&gt;Menge&lt;/th&gt;
+          &lt;th&gt;Gesamt/Verkauft&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;{{entry.goodsUnit}}, {{entry.goodsPrice}} €&lt;/td&gt;
+          &lt;td&gt;{{entry.graduationSold}}&lt;/td&gt;
+          &lt;td&gt;{{entry.graduationRevenue}}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+
+
+
+&lt;h3&gt;Vorschau Pdf&lt;/h3&gt;
+&lt;div &gt;
+  &lt;div class&#x3D;&quot;col-md-8&quot; id&#x3D;&quot;htmlConvert&quot;&gt;
+
+    &lt;div class &#x3D; &quot;headline&quot;&gt;Datum:&lt;/div&gt;
+    &lt;div class &#x3D; &quot;headline&quot;&gt;Name:&lt;/div&gt;
+    &lt;div class &#x3D; &quot;headline&quot;&gt;Kleingeld Beleg/Zählprotokoll&lt;/div&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;hr class &#x3D; &quot;hrBold&quot;&gt;
+    &lt;div class &#x3D; &quot;money&quot;&gt;Geldnoten&lt;/div&gt;
+    &lt;div class &#x3D; &quot;money&quot;&gt;Menge&lt;/div&gt;
+    &lt;div class &#x3D; &quot;money&quot;&gt;&lt;/div&gt;
+    &lt;div&gt;.&lt;/div&gt;
+
+    &lt;div&gt;5,00 €&lt;/div&gt;
+    &lt;hr&gt;
+    &lt;div&gt;10,00 €&lt;/div&gt;
+    &lt;hr&gt;
+    &lt;div&gt;20,00 €&lt;/div&gt;
+    &lt;hr&gt;
+    &lt;div&gt;50,00 €&lt;/div&gt;
+    &lt;hr class &#x3D; &quot;hrBold&quot;&gt;
+
+
+    &lt;div class&#x3D;&quot;container mt-3&quot; *ngFor&#x3D;&quot;let entry of overviewEndList&quot;&gt;
+      &lt;div *ngIf&#x3D;&quot;selectDate &#x3D;&#x3D; entry.graduationDate&quot;&gt;
+        &lt;table class&#x3D;&quot;table table-bordered&quot; &gt;
+          &lt;thead &gt;
+          &lt;tr&gt;
+            &lt;th&gt;{{entry.goodsName}}&lt;/th&gt;
+            &lt;th&gt;Menge&lt;/th&gt;
+            &lt;th&gt;Gesamt/Verkauft&lt;/th&gt;
+          &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;{{entry.goodsUnit}}, {{entry.goodsPrice}} €&lt;/td&gt;
+            &lt;td&gt;{{entry.graduationSold}}&lt;/td&gt;
+            &lt;td&gt;{{entry.graduationRevenue}}&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;col-md-4 text-right&quot;&gt;
+  &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;openPDF()&quot;&gt;PDF erstellen&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./end-of-day-pdf.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">table {
+  width: 100%;
+}
+
+
+
+.headline{
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.money{
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.hrBold{
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><br><h2>Übersicht Tagesabrechnung</h2><br><form [formGroup]="OverviewEndForm" (mouseup)="OverviewEnd()">  <div class="form-group row">    <div class="input-group">      <label class="col-4 col-form-label" for="datepickerEnOv">Datum</label>      <input #d="ngbDatepicker" [(ngModel)]="model"             class="form-control" formControlName="datepickerEnOv" id="datepickerEnOv" name="datepickerEnOv" ngbDatepicker placeholder="{{todayDateString}}" value="{{todayDateString}}">      <div class="input-group-append" >        <button (click)="d.toggle()" class="btn btn-outline-secondary calendar" type="button" ><i          class="fa fa-calendar"></i></button>      </div>    </div>  </div>  <div class="container mt-3" *ngFor="let entry of overviewEndList">    <div *ngIf="selectDate == entry.graduationDate">      <table class="table table-bordered" >        <thead >        <tr>          <th>{{entry.goodsName}}</th>          <th>Menge</th>          <th>Gesamt/Verkauft</th>        </tr>        </thead>        <tbody>        <tr>          <td>{{entry.goodsUnit}}, {{entry.goodsPrice}} €</td>          <td>{{entry.graduationSold}}</td>          <td>{{entry.graduationRevenue}}</td>        </tr>        </tbody>      </table>    </div>  </div></form><h3>Vorschau Pdf</h3><div >  <div class="col-md-8" id="htmlConvert">    <div class = "headline">Datum:</div>    <div class = "headline">Name:</div>    <div class = "headline">Kleingeld Beleg/Zählprotokoll</div>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <hr class = "hrBold">    <div class = "money">Geldnoten</div>    <div class = "money">Menge</div>    <div class = "money"></div>    <div>.</div>    <div>5,00 €</div>    <hr>    <div>10,00 €</div>    <hr>    <div>20,00 €</div>    <hr>    <div>50,00 €</div>    <hr class = "hrBold">    <div class="container mt-3" *ngFor="let entry of overviewEndList">      <div *ngIf="selectDate == entry.graduationDate">        <table class="table table-bordered" >          <thead >          <tr>            <th>{{entry.goodsName}}</th>            <th>Menge</th>            <th>Gesamt/Verkauft</th>          </tr>          </thead>          <tbody>          <tr>            <td>{{entry.goodsUnit}}, {{entry.goodsPrice}} €</td>            <td>{{entry.graduationSold}}</td>            <td>{{entry.graduationRevenue}}</td>          </tr>          </tbody>        </table>      </div>    </div>  </div></div><div class="col-md-4 text-right">  <button class="btn btn-primary" (click)="openPDF()">PDF erstellen</button></div></div>'
+    var COMPONENTS = [{'name': 'AddUserSelfComponent', 'selector': 'app-add-user-self'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChangeGoodsComponent', 'selector': 'app-change-goods'},{'name': 'ChangeSelfComponent', 'selector': 'app-change-self'},{'name': 'ChangeUserComponent', 'selector': 'app-change-user'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CreateUserComponent', 'selector': 'app-create-user'},{'name': 'DataProtectionComponent', 'selector': 'app-data-protection'},{'name': 'EndOfDayComponent', 'selector': 'app-end-of-day'},{'name': 'EndOfDayPdfComponent', 'selector': 'app-end-of-day-pdf'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'GoodsComponent', 'selector': 'app-goods'},{'name': 'ImprintComponent', 'selector': 'app-imprint'},{'name': 'LoginAndRegistrationComponent', 'selector': 'app-login-and-registration'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'MainMenuComponent', 'selector': 'app-main-menu'},{'name': 'MainScreenComponent', 'selector': 'app-main-screen'},{'name': 'MonthComponent', 'selector': 'app-month'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NewEndComponent', 'selector': 'app-new-end'},{'name': 'NewGoodsComponent', 'selector': 'app-new-goods'},{'name': 'NewReceiptComponent', 'selector': 'app-new-receipt'},{'name': 'OverviewEndComponent', 'selector': 'app-overview-end'},{'name': 'OverviewGoodsComponent', 'selector': 'app-overview-goods'},{'name': 'OverviewReceiptComponent', 'selector': 'app-overview-receipt'},{'name': 'OverviewSelfComponent', 'selector': 'app-overview-self'},{'name': 'OverviewUserComponent', 'selector': 'app-overview-user'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PasswordResetComponent', 'selector': 'app-password-reset'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'SelectionSelfServiceStandComponent', 'selector': 'app-selection-self-service-stand'},{'name': 'SelfServiceStandComponent', 'selector': 'app-self-service-stand'},{'name': 'SettingsGoodsComponent', 'selector': 'app-settings-goods'},{'name': 'StatisticsComponent', 'selector': 'app-statistics'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'YearComponent', 'selector': 'app-year'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'EndOfDayPdfComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EndOfDayPdfComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

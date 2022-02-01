@@ -1,0 +1,36 @@
+<br>
+<h2>Warenübersicht</h2>
+<br>
+
+<mat-form-field appearance="fill">
+  <mat-label>Suche</mat-label>
+  <input #input (keyup)="search($event)" matInput placeholder="suche">
+</mat-form-field>
+
+
+<div class="container mt-3">
+  <table *ngIf="searchResult" class="table table-bordered">
+    <thead class="thead-light">
+    <tr>
+      <th *ngFor="let column of header">
+        {{column}}
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let goods of searchResultList">
+      <td>{{goods.goodsName}}</td>
+      <td>{{goods.unitName}}</td>
+      <td>{{goods.goodsPrice}}</td>
+      <td>{{goods.goodsNote}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div *ngIf="!searchResult" class="alert alert-warning" role="alert">
+  Keine Suchergebnisse.
+</div>
+
+

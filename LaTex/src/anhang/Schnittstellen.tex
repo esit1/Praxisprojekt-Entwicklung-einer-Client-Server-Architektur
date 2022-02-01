@@ -1,0 +1,580 @@
+\subsection *{Entwurf der Schnittstellen}\label{Schnittstellen}
+
+\textbf{Benutzer anlegen}
+
+\textit{Client-Anfrage}
+\\
+Authentifizierung: JWT\\
+Befehl: POST user/new\\
+Daten: Benutzername, Passwort\\
+
+\textit{Server-Antwort}
+\\
+Daten:\\
+Erfolg: Statuscode 201\\
+oder bei Misserfolg: Statuscode 400, Fehlermeldung: Dem Benutzer wurde bereits einen  Selbstbedienungsstand mit dem Namen XY zugewiesen.\\
+oder bei einer ungültigen Authentifizierung: Statuscode 401 
+
+\noindent\rule{\textwidth}{1pt}
+\\
+\textbf{Schnittstelle Tagesabschluss(EndOfTheDayController)}
+\\
+Der EndOfTheDayController stellt die folgenden Schnittstellen zur Verfügung:
+
+\begin{itemize}
+	\itemsep0pt
+	\item  POST /endOfDay/
+	\item  PUT /endOfDay/
+	\item  GET /endOfDay/
+\end{itemize}
+
+Diese Schnittstellen dienen der Verwaltung des Tagesabschlusses, für jede Ware kann pro Tag nur ein Abschluss erstellt werden. Außerdem darf nur ein Benutzer mit Administratorrechten dieses ausführen.
+Die Schnittstelle POST /endOfDay/ sorgt dafür das ein neuer Eintrag erstellt werden kann.
+Mithilfe der Schnittstelle PUT /endOfDay/ kann dieser Eintrag editiert werden.
+Die Schnittstelle GET /endOfDay/ übermittelt eine Auflistung, darin enthalten sind unter anderem die Angaben, der theoretisch verkauften Waren und theoretische Einnahmen (ohne Diebstahl, beschädigte Ware usw.). 
+\\
+\\
+\textit{\underline{POST /endOfDay/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab				- LocalDate graduationDate (Datum des Tagesabschlusses)\\
+\tab\tab								- String codesName (Name der Ware)		\\
+\tab\tab								- String userName (Name des Benutzers)\\
+\tab\tab								- String selfServiceStandName (Name des \\
+\tab\tab 								Selbstbedienungsstandes)\\
+\tab\tab								- int graduationCount (Die Anzahl der vorhanden Waren, \\
+\tab \tab 								ermitteln durch zählen, wiegen o. Ä. )\\									
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus.OK und Meldung.\\
+\tab \tab 									Misserfolg: HttpStatus.NO CONTENT und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+\textit{\underline{PUT /endOfDay/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab				- Optional, LocalDate graduationDate (geändertes Datum \\
+\tab\tab 							des Tagesabschlusses)\\
+\tab\tab							- Optional,	String codesName (geänderter Name der Ware)		\\
+\tab\tab							- Optional,	String userName (geänderter Name des Benutzers)\\
+\tab\tab							- Optional,	int graduationCount (geänderte Anzahl der \\
+\tab\tab vorhanden Waren)\\
+\tab\tab											- LocalDate oldDate (Datum des alten Tagesabschlusses, \\
+\tab\tab vor der Änderung)\\
+\tab\tab												- String oldGoodsName (Name der alten Ware, \\
+\tab\tab vor der Änderung)\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus.OK und Meldung.\\
+\tab \tab 									Misserfolg: HttpStatus.NO CONTENT und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Schnittstelle Waren(GoodsController)}
+\\
+Der EndOfTheDayController stellt die folgenden Schnittstellen zur Verfügung:
+
+\begin{itemize}
+	\itemsep0pt
+	\item  POST /goods/
+	\item  PUT /goods/
+	\item  DELETE /goods/
+	\item  GET /goods/
+	\item  GET /goods/{selfServiceStandName}/{userName}	
+	\item  GET /goods//{selfServiceStandName}/{userName}/{goodsName}
+\end{itemize}
+
+Mithilfe dieser Schnittstellen lässt sich neue Ware anlegen (POST /goods/), verändern (PUT /goods/) oder auch löschen (DELETE /goods/). Diese Schnittstellen können nur von jemanden mit Administratorrechten genutzt werden. Eine Ware kann nur gelöscht werden, wenn diese nicht genutzt wird. Die beiden Schnittstellen GET /goods/ geben eine Übersicht der Waren zurück, dieses kann eine Liste oder eine einzelne Ware sein.
+\\
+\\
+\textit{\underline{POST /endOfDay/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab			- String goodsName(Warenname)\\
+\tab \tab                        		- String unitName	(Wareneinheit)\\
+\tab \tab                         		- int goodsPrice (Preis der Ware)\\
+\tab \tab                         		- String goodsNote (Bemerkung)    \\                  
+\tab \tab                         		- String selfServiceStandName \\
+\tab \tab								 (Name des Selbstbedienungsstandes)\\
+\tab \tab                        		- String userName (Benutzername)\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus.OK und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus.NO CONTENT und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+\textit{\underline{PUT /endOfDay/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab			- String goodsName( Warenname)\\
+\tab \tab                        		- optional String unitName	(geänderte Wareneinheit)\\
+\tab \tab                         -	optional	int goodsPrice (geänderter Preis der Ware)\\
+\tab \tab                         		- optional String goodsNote (geänderte Bemerkung)    \\                  
+\tab \tab                         		- String selfServiceStandName \\
+\tab \tab								(Name des Selbstbedienungsstandes)\\
+\tab \tab                        		- String userName (Benutzername)\\
+\tab \tab                        		- optional String changeGoodsName (Der neue Name, der Ware)\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus.OK und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus.NO CONTENT und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\	
+\textit{\underline{POST /endOfDay/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab			- String goodsName(Warenname)\\
+\tab \tab                        		- String unitName	(Wareneinheit)\\
+\tab \tab                         		- int goodsPrice (Preis der Ware)\\
+\tab \tab                         		- String goodsNote (Bemerkung)    \\                  
+\tab \tab                         		- String selfServiceStandName \\
+\tab \tab								 (Name des Selbstbedienungsstandes)\\
+\tab \tab                        		- String userName (Benutzername)\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus.OK und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus.NO CONTENT und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+\textit{\underline{DELETE /endOfDay/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab			- String goodsName( Warenname)\\                
+\tab \tab                         		- String selfServiceStandName \\
+\tab \tab								(Name des Selbstbedienungsstandes)\\
+\tab \tab                        		- String userName (Benutzername)\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus.OK und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus.NO CONTENT und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+\textit{\underline{GET /goods//{selfServiceStandName}/{userName}}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus.OK und Meldung.\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+\textit{\underline{GET /goods//{selfServiceStandName}/{userName}}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus.OK und Meldung.\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Schnittstelle Warenname(GoodsNameController)}
+\\
+Der GoodsNameController stellt die folgenden Schnittstellen zur Verfügung:
+
+\begin{itemize}
+	\itemsep0pt
+	\item  POST /goodsName/{goodsName}
+	\item  PUT /goodsName/
+	\item  DELETE /goodsName/
+	\item  GET /goodsName/
+
+\end{itemize}
+
+Die Schnittstellen der Klasse GoodsNameController enthalten Schnittstellen die dafür verantwortlich sind Warennamen hinzuzufügen (POST /goodsName/), ändern (PUT /goodsName/) und löschen (DELETE /goodsName/). Außerdem kann eine Liste mit allen verfügbaren Namen ausgegeben werden.
+Jeder Warenname kann nur einmalig vergeben werden. \\
+Der Warennamen wie in einer separaten Tabelle gespeichert, dieses hat den Vorteil das Redundanzen vermieden werden. Außerdem geht so verhindert das ist unterschiedliche Schreibweisen für ein und dieselbe Ware existieren.
+\\
+\\
+\textit{\underline{GET /goodsName/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab					- keine Variablen erforderlich
+\\
+Rückgabewerte: \tab 					Erfolg: Json Liste mit allen Warenamen.\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\\
+\\
+\textit{\underline{POST /goodsName/{goodsName}}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus Created\\
+\tab \tab 								Misserfolg: HttpStatus No CONTENT\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\\
+\\
+\textit{\underline{DELETE /goodsName/{goodsName}}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus.OK\\
+\tab \tab 								Misserfolg: HttpStatus Conflict\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\\
+\\
+\textit{\underline{DELETE /goodsName/{oldGoodsName}/{newGoodsName}}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK\\
+\tab \tab 								Misserfolg: HttpStatus Conflict\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Schnittstelle Wareneingang(EndOfTheDayController)}
+\\
+Der EndOfTheDayController stellt die folgenden Schnittstellen zur Verfügung:
+
+\begin{itemize}
+	\itemsep0pt
+	\item  POST /receipt/
+	\item  PUT /receipt/
+	\item  DELETE /receipt/{receiptGoodsNr}
+	\item  GET /receipt/{receiptGoodsNr}
+	\item  GET /receipt/{selfServiceStandName}
+	\item  GET /receipt/{selfServiceStandName}/{goodsName}
+\end{itemize}
+
+Mithilfe dieser Schnittstellen wird der Wareneingang und Warenausgang protokolliert. Mithilfe der Schnittstelle POST /receipt/ wird ein neuer Wareneingang oder Warenausgang hinzugefügt. PUT /receipt/ ändert diesen und DELETE /receipt/{receiptGoodsNr} löscht diesen Eintrag.
+Die Schnittstelle GET /receipt/{receiptGoodsNr} übergibt einen einzelnen Datensatz. Eine Liste mit allen Eingängen und Ausgängen, einer bestimmten Ware überliefert die Schnittstelle GET /receipt/{selfServiceStandName}/{goodsName}. Die Schnittstelle GET /receipt/{selfServiceStandName} liefert ebenfalls eine Liste, allerdings mit allen Ein-und Ausgängen.  Bei den letzten beiden Schnittstellen muss der Selbstbedienungsstandnamen angeben werden, damit ein eindeutiger Zuordnung stattfinden kann. 
+\\
+\\
+\textit{\underline{POST /receipt/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab			- LocalDate receiptDate(Datum Bestandsveränderung)\\
+\tab \tab                        		- int goodsPieces\\
+\tab \tab 								(Anzahl der Ware, die hinzugefügt oder entnommen wurde) \\
+\tab \tab                         		- String goodsName \\
+\tab \tab                         		- String userName \\                  
+\tab \tab                         		- String selfServiceStandName\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus NO CONTENT und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\\
+\\
+\textit{\underline{PUT /receipt/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab			- int receiptID (ID)\\
+\tab \tab                        		- optional LocalDate receiptDate(Datum Bestandsveränderung)\\\\
+\tab \tab                        		- optional int goodsPieces\\
+\tab \tab 								(Anzahl der Ware, die hinzugefügt oder entnommen wurde) \\
+\tab \tab                         		- optional String goodsName \\
+\tab \tab                         		- optional String userName \\                  
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK \\
+\tab \tab 								Misserfolg: HttpStatus NO CONTENT \\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\\
+\\
+\textit{\underline{DELETE /receipt/{receiptGoodsNr}}}
+\\              
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK \\
+\tab \tab 								Misserfolg: HttpStatus Conflict \\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\\
+\\
+\textit{\underline{GET /receipt/{receiptGoodsNr}}}
+\\              
+\\
+Rückgabewerte: \tab 					Erfolg: ein Datensatz \\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\\
+\\
+\textit{\underline{GET /receipt/{selfServiceStandName}}}
+\\                
+\\
+Rückgabewerte: \tab 					Erfolg: Liste mit allen Datensätzen, die dem Selbstbedingungsstand zugeordnet sind\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\\
+\\
+\textit{\underline{GET /receipt/{selfServiceStandName}}}
+\\                
+\\
+Rückgabewerte: \tab 					Erfolg: Liste mit allen Datensätzen, die dem Selbstbedingungsstand zugeordnet sind und die dem Warennamen entsprechen\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Schnittstelle Benutzerrollen(RoleController)}
+\\
+Der RoleController stellt die folgenden Schnittstellen zur Verfügung:
+
+\begin{itemize}
+	\itemsep0pt
+	\item  GET /role/
+	\item PUT /role//userRole/
+\end{itemize}
+
+Diese Schnittstelle GET /role/ gibt eine sortierte Liste mit allen verfügbaren Benutzerrollen zurück.
+PUT /role//userRole/ bewirkt das eine Benuterrolle eines Benutzer geändert wird. Nur ein Benutzer mit Administratorrechten darf Benutzerrollen ändern.
+\\
+\\
+\textit{\underline{GET /role/}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK und Liste mit allen Benutzerrollen.\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\\
+\\
+\textit{\underline{PUT /role//userRole/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab			- String changeUserName (Benutzer dessen Rolle geändert wird)\\
+\tab \tab                        		- String userName (Name des Benutzer, der die Benutzerrolle ändert)\\\\
+\tab \tab                        		- String selfServiceStandName\\
+\tab \tab                         		- optional String goodsName \\
+\tab \tab                         		- String newRole (Name der neuen Role) \\                  
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK \\
+\tab \tab 								Misserfolg: HttpStatus NO CONTENT \\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Schnittstelle Selbstbedingungsstand (SelfServiceStandController)}
+\\
+Der SelfServiceStandController stellt die folgenden Schnittstellen zur Verfügung:
+
+\begin{itemize}
+	\itemsep0pt
+	\item  POST /selfServiceStand/{userName}/{selfServiceStandName}
+	\item  POST /selfServiceStand/addUser/
+	\item  DELETE /selfServiceStand/{removeUserName}/{userName}/{selfServiceStandName}
+	\item GET /selfServiceStand/{selfServiceStandName}
+\end{itemize}
+
+
+Diese Schnittstellen helfen bei der Verwaltung eines Selbstbedienungsstandes. Ein neuer Selbstbedienungsstand wird mit der Schnittstelle POST /selfServiceStand/{userName}/{selfServiceStandName} erstellt, der Benutzer der diesen erstellt hat, erhält Administratorrechte.\\ Die Schnittstelle POST /selfServiceStand/addUser/ fügt einen bereits existierenden Benutzer, einen Selbstbedienungsstand hinzu, dabei kann die Benutzerrolle frei gewählt werden. Sobald ein Benutzer entfernt werden soll, hilft die Schnittstelle DELETE /selfServiceStand/{removeUserName}/{userName}/{selfServiceStandName}.
+Eine Liste mit allen Benutzern die dem Selbstbedienungsstand zugeordnet sind, wird mithilfe der Schnittstelle GET /selfServiceStand/{selfServiceStandName} ausgeben.
+\\
+\\
+\textit{\underline{POST /selfServiceStand/{userName}/{selfServiceStandName}}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus Conflict und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\\
+\\
+\textit{\underline{POST /selfServiceStand/addUser/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab			- String addingUserName (Benutzer der hinzugefügt wird)\\
+\tab \tab                        		- String userName (Name des Benutzer, der den neuen Benutzer hinzufügt)\\\\
+\tab \tab                        		- String selfServiceStandName\\                 
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK \\
+\tab \tab 								Misserfolg: HttpStatus Conflict \\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textit{\underline{DELETE /selfServiceStand/{removeUserName}/{userName}/{selfServiceStandName}}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus Conflict und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Schnittstelle Einheiten(UnitController)}
+\\
+Der UnitController stellt die folgenden Schnittstellen zur Verfügung:
+
+\begin{itemize}
+	\itemsep0pt
+	\item  POST /unit/{unitName}
+	\item  PUT /unit/{oldUnitName}/{newUnitName}
+	\item  DELETE /unit//{unitName}
+	\item  GET /unit//{unitName}
+\end{itemize}
+Einheiten wie z.B. Stück, KG, Sack usw. können mit der Schnittstelle POST /unit/ erstellt werden. Verändert werden können diese mit der Schnittstelle PUT /unit/. Soll eine Einheit gelöscht werden ist dieses mit der Schnittstelle DELETE /unit//{unitName} möglich. Allerdings können Änderung und Löschungen nur durchgeführt werden, wenn die Einheit noch nicht verwendet wird.
+Eine Liste der verfügbaren Einheiten gibt die Schnittstelle GET /unit//{unitName} aus.
+\\
+\\
+\textit{\underline{POST /unit/{unitName}}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus Create und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus No Content\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\textit{\underline{PUT /unit/{oldUnitName}/{newUnitName}}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus Conflict\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\textit{\underline{DELETE /unit//{unitName}}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus Conflict\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\textit{\underline{GET /unit//{unitName}}}
+\\
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus OK und Liste mit allen Einheiten.\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Schnittstelle Wareneingang(EndOfTheDayController)}
+\\
+Der EndOfTheDayController stellt die folgenden Schnittstellen zur Verfügung:
+
+\begin{itemize}
+	\itemsep0pt
+	\item  POST /user/newAdmin
+	\item  POST /user/newUser
+	\item  PUT /user/
+	\item  GET /user/{username}
+\end{itemize}
+
+Die Benutzerverwaltung kann mithilfe nachfolgender Schnittstellen durchgeführt werden. Ein neuer Benutzer und ein neuer Selbstbedienungsstand werden mit der Schnittstelle POST /user/newAdmin erstellt. Der neu erstellte Benutzer, wird automatisch dem erstellten Selbstbedienungsstand als Administrator zugeordnet. Der Name des Selbstbedienungsstandes und des Benutzers dürfen noch nicht vergeben sein.
+\\
+Ein Administrator eines  Selbstbedienungsstandes kann einen neuen Benutzer zu diesem hinzufügen, der Benutzer wird dabei neu erstellt, die Benutzerrolle kann frei gewählt werden, dieses geschieht mit der Schnittstelle POST /user/newUser. 
+\\
+Sobald ein neuer Benutzer erstellt wird wie zuerst überprüft ob der Benutzername bereits vergeben ist, sollte dieses der Fall sein, kann der Benutzer nicht erstellt werden. Die Schnittstelle PUT /user/ ist zum Editieren des Benutzers gedacht. Ein einzelner Benutzer kann mit der Schnittstelle GET /user/{username} ausgegeben werden.
+\\
+\\
+\textit{\underline{POST /user/newAdmin}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab			- String userName (Benutzername)\\
+\tab \tab                        		- String userPassword (Passwort)\\
+\tab \tab                         		- String selfServiceStandName (Name des Selbstbedienungsstandes, der neu erstellt wird) \\
+\tab \tab                         		- String email (E-Mail Adresse)\\                  
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus Createt und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus NO CONTENT und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\textit{\underline{POST /user/newUser}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab			- String userName (Benutzername)\\
+\tab \tab                        		- String userPassword (Passwort)\\
+\tab \tab                         		- String selfServiceStandName (Name des Selbstbedienungsstandes, zu dem der Benutzer hinzugefügt wird. ) \\
+\tab \tab                         		- String email (E-Mail Adresse) \\                  
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus Createt und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus NO CONTENT und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\textit{\underline{PUT /user/}}
+\\
+\\
+\NumTabs{4}				
+Eingabeparameter: \tab			- optional String userName (Benutzername)\\
+\tab \tab                        		- optional String userPassword (Passwort)\\
+\tab \tab                         		- optional String selfServiceStandName (Name des Selbstbedienungsstandes, zu dem der Benutzer hinzugefügt wird. ) \\
+\tab \tab                         		- optional String email (E-Mail Adresse)\\
+\tab \tab                         		- optional String changeUserName (neuer Benutzername)\\                   
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus Ok und Meldung.\\
+\tab \tab 								Misserfolg: HttpStatus NO Conflict und Meldung\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+\textit{\underline{GET /user/{username}}}
+\\                  
+\\
+Rückgabewerte: \tab 					Erfolg: HttpStatus Createt und Benutzerdetails\\
+\\
+Beispielrückgabelmeldung:	
+\\
+\\
+%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§

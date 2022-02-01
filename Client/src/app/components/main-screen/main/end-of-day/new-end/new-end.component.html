@@ -1,0 +1,43 @@
+<br>
+<h2>Tagesabrechnung</h2>
+<br>
+
+<div>
+  <form [formGroup]="endForm" (ngSubmit)="countGoods()">
+
+
+
+    <div formArrayName="goodsCountEn">
+      <div *ngFor="let y of goodsCountEn.controls; index as i">
+        <br>
+        <h4>{{endOfTheDayList[i].goodsName}}</h4>
+        <h5>Einheit: {{endOfTheDayList[i].unitName}}, Preis {{endOfTheDayList[i].goodsPrice}} €</h5>
+        <label >Anzahl am Tagesende: </label>
+        <input [formControlName]="i" name="text" type="number"  id="text">
+        <br>
+        <hr>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <div class="input-group">
+        <label class="col-4 col-form-label" for="datepickerEn">Datum</label>
+        <input #d="ngbDatepicker" [(ngModel)]="model"
+               class="form-control" formControlName="datepickerEn" id="datepickerEn" name="datepickerEn" ngbDatepicker placeholder="yyyy-mm-tt">
+        <div class="input-group-append">
+          <button (click)="d.toggle()" class="btn btn-outline-secondary calendar" type="button"><i
+            class="fa fa-calendar"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="offset-4 col-8">
+        <button name="submit" type="submit" class="btn btn-primary">Absenden</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
